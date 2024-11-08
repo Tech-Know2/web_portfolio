@@ -6,19 +6,25 @@ import Navbar from "./navbar";
 import Hero from "./hero";
 import Footer from "./footer";
 import Scroll from "./scroll";
+import AboutMe from "./aboutme";
 
+// Animation variant for fade-in effect
 const fadeIn = {
   hidden: { opacity: 0, y: 50, transition: { duration: 0.8, ease: "easeInOut" } },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeInOut" } },
 };
 
-const Section = ({ children }: { children: React.ReactNode }) => {
+// Section component that triggers fade-in animation when in view
+// Updated typing to allow id and other HTML attributes
+const Section = ({ children, id, className }: { children: React.ReactNode, id?: string, className?: string }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
 
   return (
     <motion.div
       ref={ref}
+      id={id} // Apply the id prop here
+      className={`py-24 ${className}`} // Allow passing custom className
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={fadeIn}
@@ -30,12 +36,15 @@ const Section = ({ children }: { children: React.ReactNode }) => {
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      <Scroll />
+    <div className="min-h-screen bg-slate-100">
       <Navbar />
 
       <Section>
         <Hero />
+      </Section>
+
+      <Section id="about-me">
+        <AboutMe />
       </Section>
 
       <Footer />
