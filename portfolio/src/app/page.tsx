@@ -37,6 +37,7 @@ const Section = ({ children, id, className }: { children: React.ReactNode, id?: 
 export default function Home() {
   return (
     <div className="min-h-screen bg-slate-100">
+      <Scroll />
       <Navbar />
 
       <Section>

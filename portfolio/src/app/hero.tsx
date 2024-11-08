@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion"; // Import Framer Motion
-import Link from "next/link";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export default function Hero() {
@@ -21,9 +20,9 @@ export default function Hero() {
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
               transition={{ duration: 1 }}
             >
-              Hello,
+              Hey,
               <br />
-              I'm Cooper Harris
+              Im Cooper Harris
             </motion.h1>
             <motion.div
               className="flex space-x-4"
@@ -32,7 +31,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.3 }}
             >
               <h2 className="text-5xl md:text-3xl text-black leading-tight">
-                I am pursuing both a Bachelor's degree in Software Engineering at ASU Polytechnic.
+                I am pursuing both a Bachelors degree in Software Engineering at ASU Polytechnic.
               </h2>
             </motion.div>
           </div>

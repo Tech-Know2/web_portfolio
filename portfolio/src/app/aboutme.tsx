@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { FiChevronRight } from "react-icons/fi";
 import { useInView } from "react-intersection-observer";
 
@@ -227,7 +226,7 @@ const Projects = () => {
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, delay: 0.7 }}
     >
-      <h2 className="text-3xl font-semibold text-black mb-4 text-center">Projects I've Built</h2>
+      <h2 className="text-3xl font-semibold text-black mb-4 text-center">Projects Ive Built</h2>
       <motion.ul
         className="space-y-4"
         initial={{ opacity: 0 }}
