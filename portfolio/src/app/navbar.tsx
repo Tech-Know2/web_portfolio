@@ -21,17 +21,11 @@ const Navbar = () => {
                             <Link href="#about-me" className="text-black hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-md font-medium">
                                 About Me
                             </Link>
-                            <Link href="#my-goals" className="text-black hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-md font-medium">
-                                My Goals
-                            </Link>
                             <Link href="#timeline" className="text-black hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-md font-medium">
                                 Timeline
                             </Link>
                             <Link href="#projects" className="text-black hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-md font-medium">
                                 Projects
-                            </Link>
-                            <Link href="#contact" className="text-black hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-md font-medium">
-                                Contact Me
                             </Link>
                         </div>
 
@@ -60,17 +54,11 @@ const Navbar = () => {
                             <Link href="#about-me" className="text-black hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-md font-medium">
                                 About Me
                             </Link>
-                            <Link href="#my-goals" className="text-black hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-md font-medium">
-                                My Goals
-                            </Link>
                             <Link href="#timeline" className="text-black hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-md font-medium">
                                 Timeline
                             </Link>
                             <Link href="#projects" className="text-black hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-md font-medium">
                                 Projects
-                            </Link>
-                            <Link href="#contact" className="text-black hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-md font-medium">
-                                Contact Me
                             </Link>
                         </div>
                     )}

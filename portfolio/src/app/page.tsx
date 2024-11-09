@@ -8,6 +8,7 @@ import Footer from "./footer";
 import Scroll from "./scroll";
 import AboutMe from "./aboutme";
 import Timeline from "./timeline";
+import Projects from "./projects";
 
 // Animation variant for fade-in effect
 const fadeIn = {
@@ -51,6 +52,10 @@ export default function Home() {
 
       <Section id="timeline">
         <Timeline />
+      </Section>
+
+      <Section id="projects">
+        <Projects />
       </Section>
 
       <Footer />

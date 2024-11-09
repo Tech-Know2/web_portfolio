@@ -13,6 +13,7 @@ const events = [
   { title: "Started Programming", description: "Began programming by creating small whack-a-mole games in Scratch.", date: "January 2016", hashtags:"#Scratch, #Block" },
   { title: "Elementary School Graduation", description: "Graduated elementary school.", date: "June 2018", hashtags:"" },
   { title: "Web Development", description: "Learned HTML, CSS, and JS as part of my cStem pathway in 7th grade.", date: "August 2018", hashtags:"#HTML, #CSS, #JS" },
+  { title: "Quibbit", description: "An “Unblocked” flash game website with over 200 games in the content catalog so that my friends and other students could get around our middle school's game blocking system.", date: "September 2018", hashtags:"#GoogleSites, #Flash, #Adsense, #Entrepreneur" },
   { title: "Upgraded to Unity", description: "Transitioned from Scratch to Unity with C# in 7th grade.", date: "January 2019", hashtags:"#C#, #Unity" },
   { title: "Red Block the Game", description: "Built my first game using a Brackeys tutorial on Unity.", date: "February 2019", hashtags:"#C#, #Unity, #Tutorial" },
   { title: "Space Farm Tycoon", description: "A city builder for Mars colonization, built in Scratch for a science project.", date: "February 2019", hashtags:"#Scratch, #Blocks" },
@@ -52,7 +53,7 @@ export default function TimelineComponent() {
               <motion.div
                 initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}  // Ensure the animation runs only once
                 transition={{ duration: 0.8 }}
                 style={{ padding: 0 }}
               >

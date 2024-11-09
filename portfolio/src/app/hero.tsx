@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FaLinkedin, FaYoutube, FaHandshake, FaGithub, FaBlogger } from "react-icons/fa";
 
 export default function Hero() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -30,7 +31,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -100 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
               transition={{ duration: 1, delay: 0.3 }}
-              ref={ref} 
+              ref={ref}
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl text-black leading-tight">
                 I am pursuing both a Bachelors degree in Software Engineering at ASU Polytechnic.
@@ -47,7 +48,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.5 }}
               ref={ref} 
             >
-              Key Projects
+              Projects in Development
             </motion.h1>
             <motion.ul
               className="space-y-6"
@@ -64,13 +65,15 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 0.7 }}
                 ref={ref} 
               >
-                <motion.div
-                  className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
-                />
-                Servotor
-                <span className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  &rarr;
-                </span>
+                <a href="#projects">
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
+                  />
+                  Servotor
+                  <span className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    &rarr;
+                  </span>
+                </a>
               </motion.li>
               <motion.li
                 className="relative group text-xl sm:text-2xl font-normal cursor-pointer"
@@ -80,13 +83,15 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 0.8 }}
                 ref={ref} 
               >
-                <motion.div
-                  className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
-                />
-                Stater
-                <span className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  &rarr;
-                </span>
+                <a href="#projects">
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
+                  />
+                  Stater
+                  <span className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    &rarr;
+                  </span>
+                </a>
               </motion.li>
               <motion.li
                 className="relative group text-xl sm:text-2xl font-normal cursor-pointer"
@@ -96,15 +101,67 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 0.9 }}
                 ref={ref} 
               >
-                <motion.div
-                  className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
-                />
-                Tabletop Empires
-                <span className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  &rarr;
-                </span>
+                <a href="#projects">
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
+                  />
+                  Tabletop Empires
+                  <span className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    &rarr;
+                  </span>
+                </a>
               </motion.li>
             </motion.ul>
+
+            {/* Social media icons */}
+            <motion.div
+              className="flex space-x-8 mt-8 justify-center mt-[10%]"
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              ref={ref}
+            >
+              <a
+                href="https://www.linkedin.com/in/james-cooper-harris/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-blue-700 transition duration-300"
+              >
+                <FaLinkedin size={32} />
+              </a>
+              <a
+                href="https://www.youtube.com/@dumbmoney261"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-red-600 transition duration-300"
+              >
+                <FaYoutube size={32} />
+              </a>
+              <a
+                href="https://asu.joinhandshake.com/profiles/56784401"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-gray-600 transition duration-300"
+              >
+                <FaHandshake size={32} />
+              </a>
+              <a
+                href="https://github.com/tech-know2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-gray-800 transition duration-300"
+              >
+                <FaGithub size={32} />
+              </a>
+              <a
+                href="https://coopersdevblog.blogspot.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-gray-800 transition duration-300"
+              >
+                <FaBlogger size={32} />
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>
