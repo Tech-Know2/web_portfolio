@@ -10,7 +10,7 @@ const AboutMe = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.h1
-          className="text-5xl font-bold text-black mb-8 text-center"
+          className="text-4xl sm:text-5xl font-bold text-black mb-8 text-center"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -19,25 +19,25 @@ const AboutMe = () => {
         </motion.h1>
 
         {/* Main container for columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
           {/* Language Skills */}
-          <div className="bg-white p-6 rounded-xl space-y-3 shadow-md">
+          <div className="bg-white p-4 sm:p-6 rounded-xl space-y-3 shadow-md">
             <LanguageSkills />
           </div>
           {/* Education Section */}
-          <div className="bg-white p-6 rounded-xl space-y-3 shadow-md">
+          <div className="bg-white p-4 sm:p-6 rounded-xl space-y-3 shadow-md">
             <EducationSection />
           </div>
           {/* Passions and Interests Section */}
-          <div className="bg-white p-6 rounded-xl space-y-3 shadow-md">
+          <div className="bg-white p-4 sm:p-6 rounded-xl space-y-3 shadow-md">
             <PassionsInterests />
           </div>
           {/* Platforms and Tools */}
-          <div className="bg-white p-6 rounded-xl space-y-3 shadow-md">
+          <div className="bg-white p-4 sm:p-6 rounded-xl space-y-3 shadow-md">
             <PlatformsTools />
           </div>
           {/* Projects - this takes up the last two grid spots */}
-          <div className="bg-white p-6 rounded-xl space-y-3 shadow-md col-span-2 lg:col-span-2">
+          <div className="bg-white p-4 sm:p-6 rounded-xl space-y-3 shadow-md col-span-1 sm:col-span-2 lg:col-span-2">
             <Projects />
           </div>
         </div>
@@ -58,7 +58,7 @@ const LanguageSkills = () => {
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, delay: 0.3 }}
     >
-      <h2 className="text-3xl font-semibold text-black mb-4 text-center">Language Skills</h2>
+      <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Language Skills</h2>
       {['C#', 'Java', 'TypeScript', 'Kotlin', 'Rust'].map((language, index) => (
         <motion.div
           key={index}
@@ -72,7 +72,7 @@ const LanguageSkills = () => {
             stiffness: 100,
           }}
         >
-          <h3 className="text-xl font-medium">{language}</h3>
+          <h3 className="text-lg sm:text-xl font-medium">{language}</h3>
           <div className="flex space-x-2 mt-2">
             {[...Array(5)].map((_, ratingIndex) => {
               const rating = (index === 0 && ratingIndex < 5) || 
@@ -84,7 +84,7 @@ const LanguageSkills = () => {
               return (
                 <div
                   key={ratingIndex}
-                  className={`w-6 h-6 rounded-full border-2 ${rating ? 'bg-black' : 'bg-gray-300'}`}
+                  className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 ${rating ? 'bg-black' : 'bg-gray-300'}`}
                 ></div>
               );
             })}
@@ -107,7 +107,7 @@ const EducationSection = () => {
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <h2 className="text-3xl font-semibold text-black mb-4 text-center">Education</h2>
+      <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Education</h2>
       {[ 
         { degree: "Bachelors of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028" },
         { degree: "Silicon Vally Immersion Camp", institution: "Menlo College", year: "2023" },
@@ -126,7 +126,7 @@ const EducationSection = () => {
           }}
         >
           <div>
-            <h3 className="text-xl font-medium">{edu.degree}</h3>
+            <h3 className="text-lg sm:text-xl font-medium">{edu.degree}</h3>
             <p className="text-gray-600">{edu.institution}</p>
             <p className="text-gray-500">{edu.year}</p>
           </div>
@@ -148,7 +148,7 @@ const PassionsInterests = () => {
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <h2 className="text-3xl font-semibold text-black mb-4 text-center">Passions & Interests</h2>
+      <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Passions & Interests</h2>
       <motion.ul
         className="text-lg text-gray-700 space-y-2"
         initial={{ opacity: 0, y: 20 }}
@@ -200,7 +200,7 @@ const PlatformsTools = () => {
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        {['Unity', 'Steamworks', 'Node.js', 'React & Next.js', 'Wordpress, Prestashop, Wix, Joomla, Woocommerce, Shopify', 'GitHub', 'SQL & NoSQL Databases (Supabase, MongoDB)', 'Visual Studio Code & JetBrains IDEs'].map((tool, index) => (
+        {['Unity', 'Steamworks', 'Node.js', 'React & Next.js', 'Shopify & Woocommerce', 'Wordpress, Prestashop, Joomla', 'GitHub', 'SQL & NoSQL Databases (Supabase, MongoDB)', 'Visual Studio Code & JetBrains IDEs'].map((tool, index) => (
           <motion.li
             key={index}
             className="flex items-center"
@@ -215,6 +215,7 @@ const PlatformsTools = () => {
   );
 };
 
+// Projects Section
 const Projects = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
 
@@ -226,7 +227,7 @@ const Projects = () => {
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, delay: 0.7 }}
     >
-      <h2 className="text-3xl font-semibold text-black mb-4 text-center">Projects Ive Built</h2>
+      <h2 className="text-3xl font-semibold text-black mb-4 text-center">Projects I&apos;ve Built</h2>
       <motion.ul
         className="space-y-4"
         initial={{ opacity: 0 }}

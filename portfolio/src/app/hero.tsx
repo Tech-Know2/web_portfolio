@@ -22,7 +22,7 @@ export default function Hero() {
             >
               Hey,
               <br />
-              Im Cooper Harris
+              I&apos;m Cooper Harris
             </motion.h1>
             <motion.div
               className="flex space-x-4"
