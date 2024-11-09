@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiChevronRight } from "react-icons/fi";
 import { useInView } from "react-intersection-observer";
@@ -58,7 +59,7 @@ const LanguageSkills = () => {
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, delay: 0.3 }}
     >
-      <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Language Skills</h2>
+      <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Language Proficiency</h2>
       {['C#', 'Java', 'TypeScript', 'Kotlin', 'Rust'].map((language, index) => (
         <motion.div
           key={index}
@@ -109,9 +110,9 @@ const EducationSection = () => {
     >
       <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Education</h2>
       {[ 
-        { degree: "Bachelors of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028" },
-        { degree: "Silicon Vally Immersion Camp", institution: "Menlo College", year: "2023" },
-        { degree: "Whitney High School", institution: "4.5 GPA", year: "2024" },
+        { degree: "BA of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028", gpa:"3.5 GPA" },
+        { degree: "Silicon Vally Immersion Camp", institution: "Menlo College", year: "2023", gpa:"N/A"  },
+        { degree: "High School Diploma", institution: "Whitney High School", year: "2024", gpa:"4.5 GPA"  },
       ].map((edu, index) => (
         <motion.div
           key={index}
@@ -128,6 +129,7 @@ const EducationSection = () => {
           <div>
             <h3 className="text-lg sm:text-xl font-medium">{edu.degree}</h3>
             <p className="text-gray-600">{edu.institution}</p>
+            <p className="text-gray-500">{edu.gpa}</p>
             <p className="text-gray-500">{edu.year}</p>
           </div>
         </motion.div>
@@ -219,6 +221,14 @@ const PlatformsTools = () => {
 const Projects = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
 
+  // State to manage which project is expanded
+  const [expandedProject, setExpandedProject] = useState<number | null>(null);
+
+  // Toggle function for project description
+  const toggleDescription = (index: number) => {
+    setExpandedProject(expandedProject === index ? null : index);
+  };
+
   return (
     <motion.div
       ref={ref}
@@ -234,7 +244,7 @@ const Projects = () => {
         animate={inView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 1, delay: 0.7 }}
       >
-        {[ 
+        {[
           {
             title: "Servotor - Cloud Compute Services",
             description:
@@ -268,37 +278,43 @@ const Projects = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1, delay: 0.7 + index * 0.2 }}
           >
-            {/* Title */}
-            <div className="flex flex-row">
+            {/* Title with click functionality */}
+            <div
+              className="flex flex-row cursor-pointer"
+              onClick={() => toggleDescription(index)}
+            >
               <motion.div
                 className="flex items-center"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <FiChevronRight className="mr-3 text-gray-700" /> {project.title}
+                {/* Change the icon depending on the expanded state */}
+                <FiChevronRight
+                  className={`mr-3 text-gray-700 transform ${
+                    expandedProject === index ? "rotate-90" : "rotate-0"
+                  } transition-transform duration-300`}
+                />
+                {project.title}
               </motion.div>
             </div>
 
-            {/* Description (Appears on hover, disappears on hover out) */}
-            <motion.p
-              className="text-gray-500 mt-2"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{
-                opacity: 0,
-                height: 0,
-              }}
-              transition={{
-                opacity: { duration: 0.3 },
-                height: { duration: 0.3 },
-              }}
-              whileHover={{
-                opacity: 1,
-                height: "auto", // Set to auto so description can expand
-                transition: { duration: 0.3 },
-              }}
-            >
-              {project.description}
-            </motion.p>
+            {/* Description (Visible if the project is expanded) */}
+            {expandedProject === index && (
+              <motion.p
+                className="text-gray-500 mt-2"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{
+                  opacity: 1,
+                  height: "auto", // Set to auto so description expands
+                }}
+                transition={{
+                  opacity: { duration: 0.3 },
+                  height: { duration: 0.3 },
+                }}
+              >
+                {project.description}
+              </motion.p>
+            )}
           </motion.li>
         ))}
       </motion.ul>

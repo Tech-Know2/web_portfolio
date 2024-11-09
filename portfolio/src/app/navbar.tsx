@@ -35,6 +35,15 @@ const Navbar = () => {
                             </Link>
                         </div>
 
+                        {/* Desktop Download Resume Button */}
+                        <a
+                            href="/College Resume.pdf"
+                            download
+                            className="hidden md:inline-block text-white bg-black hover:bg-neutral-800 py-2 px-4 text-md font-medium no-underline"
+                        >
+                            Download Resume
+                        </a>
+
                         {/* Mobile menu button */}
                         <div className="sm:hidden flex items-center">
                             <button onClick={toggleMenu} className="text-black hover:text-white focus:outline-none">

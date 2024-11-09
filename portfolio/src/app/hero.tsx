@@ -5,20 +5,21 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export default function Hero() {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
     <main>
-      <div className="flex items-center justify-center pt-[10%]">
-        <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start px-6" ref={ref}>
+      <div className="flex items-center justify-center pt-[10%] px-4">
+        <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start">
           
           {/* Left side with text and introduction */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 mb-12 md:mb-0">
             <motion.h1
-              className="text-6xl md:text-6xl font-bold text-black leading-tight mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-black leading-tight mb-6"
               initial={{ opacity: 0, x: -100 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
               transition={{ duration: 1 }}
+              ref={ref}
             >
               Hey,
               <br />
@@ -29,20 +30,22 @@ export default function Hero() {
               initial={{ opacity: 0, x: -100 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
               transition={{ duration: 1, delay: 0.3 }}
+              ref={ref} 
             >
-              <h2 className="text-5xl md:text-3xl text-black leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl text-black leading-tight">
                 I am pursuing both a Bachelors degree in Software Engineering at ASU Polytechnic.
               </h2>
             </motion.div>
           </div>
 
           {/* Right side for image and project list */}
-          <div className="w-full md:w-1/2 mt-12 md:mt-0 flex justify-center flex-col pl-[5%]">
+          <div className="w-full md:w-1/2 flex justify-center flex-col pl-0 md:pl-[5%]">
             <motion.h1
-              className="text-5xl md:text-2xl text-black leading-tight mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl text-black leading-tight mb-6"
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
+              ref={ref} 
             >
               Key Projects
             </motion.h1>
@@ -51,13 +54,15 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
+              ref={ref} 
             >
               <motion.li
-                className="relative group text-xl font-normal cursor-pointer"
+                className="relative group text-xl sm:text-2xl font-normal cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 1, delay: 0.7 }}
+                ref={ref} 
               >
                 <motion.div
                   className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
@@ -68,11 +73,12 @@ export default function Hero() {
                 </span>
               </motion.li>
               <motion.li
-                className="relative group text-xl font-normal cursor-pointer"
+                className="relative group text-xl sm:text-2xl font-normal cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 1, delay: 0.8 }}
+                ref={ref} 
               >
                 <motion.div
                   className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
@@ -83,11 +89,12 @@ export default function Hero() {
                 </span>
               </motion.li>
               <motion.li
-                className="relative group text-xl font-normal cursor-pointer"
+                className="relative group text-xl sm:text-2xl font-normal cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 1, delay: 0.9 }}
+                ref={ref} 
               >
                 <motion.div
                   className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
