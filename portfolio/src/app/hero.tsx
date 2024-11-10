@@ -125,7 +125,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/james-cooper-harris/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black hover:text-blue-700 transition duration-300"
+                className="text-black hover:text-gray-700 transition duration-300"
               >
                 <FaLinkedin size={32} />
               </a>
@@ -133,7 +133,7 @@ export default function Hero() {
                 href="https://www.youtube.com/@dumbmoney261"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black hover:text-red-600 transition duration-300"
+                className="text-black hover:text-gray-700 transition duration-300"
               >
                 <FaYoutube size={32} />
               </a>
@@ -141,7 +141,7 @@ export default function Hero() {
                 href="https://asu.joinhandshake.com/profiles/56784401"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black hover:text-gray-600 transition duration-300"
+                className="text-black hover:text-gray-700 transition duration-300"
               >
                 <FaHandshake size={32} />
               </a>
@@ -149,7 +149,7 @@ export default function Hero() {
                 href="https://github.com/tech-know2"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black hover:text-gray-800 transition duration-300"
+                className="text-black hover:text-gray-700 transition duration-300"
               >
                 <FaGithub size={32} />
               </a>
@@ -157,7 +157,7 @@ export default function Hero() {
                 href="https://coopersdevblog.blogspot.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black hover:text-gray-800 transition duration-300"
+                className="text-black hover:text-gray-700 transition duration-300"
               >
                 <FaBlogger size={32} />
               </a>
