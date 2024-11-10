@@ -25,7 +25,7 @@ const Section = ({ children, id, className }: { children: React.ReactNode, id?: 
     <motion.div
       ref={ref}
       id={id}
-      className={`py-24 ${className}`} // Custom className prop
+      className={`py-24 ${className}`}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={fadeIn}

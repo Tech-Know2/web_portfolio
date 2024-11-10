@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 
 const AboutMe = () => {
   return (
-    <section className="pt-16 pb-16 mt-20">
+    <section className="pt-16 pb-16">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.h1
@@ -22,23 +22,23 @@ const AboutMe = () => {
         {/* Main container for columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
           {/* Language Skills */}
-          <div className="bg-white p-4 sm:p-6 rounded-xl space-y-3 shadow-md">
+          <div className="bg-white p-4 sm:p-6 rounded-lg space-y-3 shadow-md">
             <LanguageSkills />
           </div>
           {/* Education Section */}
-          <div className="bg-white p-4 sm:p-6 rounded-xl space-y-3 shadow-md">
+          <div className="bg-white p-4 sm:p-6 rounded-lg space-y-3 shadow-md">
             <EducationSection />
           </div>
           {/* Passions and Interests Section */}
-          <div className="bg-white p-4 sm:p-6 rounded-xl space-y-3 shadow-md">
+          <div className="bg-white p-4 sm:p-6 rounded-lg space-y-3 shadow-md">
             <PassionsInterests />
           </div>
           {/* Platforms and Tools */}
-          <div className="bg-white p-4 sm:p-6 rounded-xl space-y-3 shadow-md">
+          <div className="bg-white p-4 sm:p-6 rounded-lg space-y-3 shadow-md">
             <PlatformsTools />
           </div>
           {/* Projects - this takes up the last two grid spots */}
-          <div className="bg-white p-4 sm:p-6 rounded-xl space-y-3 shadow-md col-span-1 sm:col-span-2 lg:col-span-2">
+          <div className="bg-white p-4 sm:p-6 rounded-lg space-y-3 shadow-md col-span-1 sm:col-span-2 lg:col-span-2">
             <Projects />
           </div>
         </div>
@@ -202,7 +202,7 @@ const PlatformsTools = () => {
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        {['Unity', 'Steamworks', 'Node.js', 'React & Next.js', 'Shopify & Woocommerce', 'Wordpress, Prestashop, Joomla', 'GitHub', 'SQL & NoSQL Databases (Supabase, MongoDB)', 'Visual Studio Code & JetBrains IDEs'].map((tool, index) => (
+        {['Unity', 'Steamworks', 'Node.js', 'React, Next.js, & Vercel', 'Shopify & Woocommerce', 'Wordpress, Prestashop, Joomla', 'GitHub & SourceTree', 'SQL & NoSQL Databases (Supabase, MongoDB)', 'Visual Studio Code & JetBrains IDEs'].map((tool, index) => (
           <motion.li
             key={index}
             className="flex items-center"
@@ -246,19 +246,24 @@ const Projects = () => {
       >
         {[
           {
+            title: "Eagle Project",
+            description:
+              "I spent 2 years working with the Chester California's Parks and Recreactions Department to build several benches for their community on a donated outdoor trail and walking area. I collaborated with local government, businesses, and volutneers to build benches for a community 3 hours away from my home.",
+          },
+          {
             title: "Servotor - Cloud Compute Services",
             description:
-              "Developed and launched a fully automated platform for deploying cloud compute services and products, streamlining the user experience from start to finish.",
+              "Developed and launched a fully automated platform for deploying cloud compute services and products, streamlining the user experience from start to finish. While being almost completely powered by opensource, community driven & developed tools.",
           },
           {
             title: "Stater - Personal Finance App",
             description:
-              "Building an inclusive personal finance application that offers free and accessible banking services to individuals worldwide, ensuring financial equality for all.",
+              "Building an inclusive personal finance application that offers free and accessible banking services to individuals worldwide, ensuring financial equality for all. Powered by Stellar, Plaid, MoneyGram, and Mastercard, this project has the potential to change the world for the better.",
           },
           {
             title: "Table Top Empires - Strategy Game",
             description:
-              "A dynamic real-time multiplayer strategy game that allows players to construct and govern their empire within a procedurally generated world, using randomly drawn cards to shape their path to victory.",
+              "A dynamic real-time multiplayer strategy game that allows players to construct and govern their empire within a procedurally generated world, using randomly drawn cards to shape their path to victory or downfall.",
           },
           {
             title: "Quibbit",

@@ -7,7 +7,7 @@ const projectsData = [
   {
     title: "Servotor",
     description: "The evolution of Rook Servers, built on open-source and community tools.",
-    hashtags: "#CyberPanel, #Pterodactyl",
+    hashtags: "#Paymenter, #CyberPanel, #Pterodactyl",
     github: "https://github.com/Tech-Know2/Servotor",
     startDate: "January 2023",
     endDate: "Present",
@@ -56,7 +56,7 @@ const Projects = () => {
           {projectsData.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white p-4 sm:p-6 rounded-xl space-y-3 shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+              className="bg-white p-4 sm:p-6 rounded-lg space-y-3 shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
