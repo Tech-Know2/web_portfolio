@@ -112,8 +112,8 @@ const EducationSection = () => {
       <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Education</h2>
       {[ 
         { degree: "BA of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028", gpa:"3.7 GPA" },
-        { degree: "Silicon Vally Immersion Camp", institution: "Menlo College", year: "2023", gpa:"N/A"  },
         { degree: "High School Diploma", institution: "Whitney High School", year: "2024", gpa:"4.5 GPA"  },
+        { degree: "Silicon Vally Immersion Camp", institution: "Menlo College", year: "2023", gpa:"N/A"  },
       ].map((edu, index) => (
         <motion.div
           key={index}
@@ -129,9 +129,9 @@ const EducationSection = () => {
         >
           <div>
             <h3 className="text-lg sm:text-xl font-medium">{edu.degree}</h3>
-            <p className="text-gray-600">{edu.institution}</p>
-            <p className="text-gray-500">{edu.gpa}</p>
-            <p className="text-gray-500">{edu.year}</p>
+            <p className="text-black">{edu.institution}</p>
+            <p className="text-black">{edu.gpa}</p>
+            <p className="text-black">{edu.year}</p>
           </div>
         </motion.div>
       ))}
@@ -153,7 +153,7 @@ const PassionsInterests = () => {
     >
       <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Passions & Interests</h2>
       <motion.ul
-        className="text-lg text-gray-700 space-y-2"
+        className="text-lg text-black space-y-2"
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -175,7 +175,7 @@ const PassionsInterests = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <FiChevronRight className="mr-3 text-gray-700" /> {interest}
+            <FiChevronRight className="mr-3 text-black" /> {interest}
           </motion.li>
         ))}
       </motion.ul>
@@ -197,7 +197,7 @@ const PlatformsTools = () => {
     >
       <h2 className="text-3xl font-semibold text-black mb-4 text-center">Platforms & Tools</h2>
       <motion.ul
-        className="text-lg text-gray-700 space-y-2"
+        className="text-lg text-black space-y-2"
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -209,7 +209,7 @@ const PlatformsTools = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <FiChevronRight className="mr-3 text-gray-700" /> {tool}
+            <FiChevronRight className="mr-3 text-black" /> {tool}
           </motion.li>
         ))}
       </motion.ul>
@@ -246,7 +246,7 @@ const Projects = () => {
       >
         {[
           {
-            title: "Eagle Project",
+            title: "Eagle Project - Boy Scouts of America",
             description:
               "I spent 2 years working with the Chester California's Parks and Recreactions Department to build several benches for their community on a donated outdoor trail and walking area. I collaborated with local government, businesses, and volutneers to build benches for a community 3 hours away from my home.",
           },
@@ -278,7 +278,7 @@ const Projects = () => {
         ].map((project, index) => (
           <motion.li
             key={index}
-            className="text-lg text-gray-700 hover:text-black transition-colors duration-300 relative"
+            className="text-lg text-black hover:text-black transition-colors duration-300 relative"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1, delay: 0.7 + index * 0.2 }}
@@ -295,7 +295,7 @@ const Projects = () => {
               >
                 {/* Change the icon depending on the expanded state */}
                 <FiChevronRight
-                  className={`mr-3 text-gray-700 transform ${
+                  className={`mr-3 text-black transform ${
                     expandedProject === index ? "rotate-90" : "rotate-0"
                   } transition-transform duration-300`}
                 />
@@ -306,7 +306,7 @@ const Projects = () => {
             {/* Description (Visible if the project is expanded) */}
             {expandedProject === index && (
               <motion.p
-                className="text-gray-500 mt-2"
+                className="text-black mt-2"
                 initial={{ opacity: 0, height: 0 }}
                 animate={{
                   opacity: 1,
