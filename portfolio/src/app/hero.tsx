@@ -34,7 +34,7 @@ export default function Hero() {
               ref={ref}
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl text-black leading-tight">
-                I am pursuing both a Bachelors degree in Software Engineering at ASU Polytechnic.
+                I am pursuing a Bachelors degree in Software Engineering at ASU Polytechnic.
               </h2>
             </motion.div>
           </div>

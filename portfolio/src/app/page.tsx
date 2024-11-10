@@ -17,7 +17,6 @@ const fadeIn = {
 };
 
 // Section component that triggers fade-in animation when in view
-// Updated typing to allow id and other HTML attributes
 const Section = ({ children, id, className }: { children: React.ReactNode, id?: string, className?: string }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
@@ -25,8 +24,8 @@ const Section = ({ children, id, className }: { children: React.ReactNode, id?: 
   return (
     <motion.div
       ref={ref}
-      id={id} // Apply the id prop here
-      className={`py-24 ${className}`} // Allow passing custom className
+      id={id}
+      className={`py-24 ${className}`} // Custom className prop
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={fadeIn}
@@ -38,7 +37,7 @@ const Section = ({ children, id, className }: { children: React.ReactNode, id?: 
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-100">
+    <div className="min-h-screen">
       <Scroll />
       <Navbar />
 

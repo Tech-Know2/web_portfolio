@@ -5,4 +5,9 @@
 html {
     scroll-behavior: smooth;
 }
-  
+
+body {
+    background-color: #f9f9f9; /* Light background */
+    background-image: radial-gradient(circle, #000 1px, transparent 0.1px); /* Dot grid */
+    background-size: 20px 20px; /* Grid spacing */
+}

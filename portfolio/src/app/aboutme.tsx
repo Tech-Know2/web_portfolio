@@ -159,15 +159,15 @@ const PassionsInterests = () => {
         transition={{ duration: 1, delay: 0.5 }}
       >
         {[
+          "Entrepreneurship and Business",
           "CeFi & DeFi",
+          "Aerospace",
+          "Video Game Development",
           "Reading Science Fiction",
           "Formula One and Motorsports",
           "Hard & Punk Rock",
-          "Outdoor Adventures",
-          "Entrepreneurship and Business",
-          "Aerospace",
-          "World History",
-          "Video Game Development"
+          "The Outdoors",
+          "World History"
         ].map((interest, index) => (
           <motion.li
             key={index}

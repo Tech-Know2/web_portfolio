@@ -7,7 +7,8 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import { motion } from "framer-motion";
+import { motion, AnimatePresence  } from "framer-motion";
+import { MdExpandMore, MdExpandLess } from "react-icons/md";
 
 const events = [
   { title: "Started Programming", description: "Began programming by creating small whack-a-mole games in Scratch.", date: "January 2016", hashtags:"#Scratch, #Block" },
@@ -35,7 +36,11 @@ const events = [
 ];
 
 export default function TimelineComponent() {
-  const [eventsData] = useState(events);
+  const [openEventIndex, setOpenEventIndex] = useState<number | null>(null);
+
+  const toggleEvent = (index: number) => {
+    setOpenEventIndex(openEventIndex === index ? null : index);
+  };
 
   return (
     <>
@@ -43,32 +48,52 @@ export default function TimelineComponent() {
         <h1 className="text-5xl pb-[5%] font-semibold">My Journey So Far</h1>
       </div>
       <Timeline position="alternate" sx={{ marginBottom: -1 }}>
-        {eventsData.map((event, index) => (
+        {events.map((event, index) => (
           <TimelineItem key={index} sx={{ marginBottom: -4 }}>
-            <TimelineSeparator sx={{ display: 'flex', alignItems: 'center' }}>
-              <TimelineDot sx={{ bgcolor: 'black' }} />
-              {index < eventsData.length - 1 && <TimelineConnector sx={{ bgcolor: 'black' }} />}
+            <TimelineSeparator sx={{ display: "flex", alignItems: "center" }}>
+              <TimelineDot sx={{ bgcolor: "black" }} />
+              {index < events.length - 1 && <TimelineConnector sx={{ bgcolor: "black" }} />}
             </TimelineSeparator>
             <TimelineContent>
               <motion.div
                 initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}  // Ensure the animation runs only once
+                viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
                 style={{ padding: 0 }}
               >
                 <div
-                  className="p-2 bg-white border rounded-lg shadow-lg text-left hover:scale-105 hover:shadow-2xl transition-all px-[2%] py-[2%] mb-1"
+                  className="p-2 bg-white border rounded-lg shadow-lg text-left hover:scale-105 hover:shadow-2xl transition-all px-[2%] py-[2%] mb-1 cursor-pointer"
                   style={{
-                    width: '60%',
-                    height: 'auto',
-                    margin: '0 auto',
+                    width: "60%",
+                    height: "auto",
+                    margin: "0 auto",
                   }}
+                  onClick={() => toggleEvent(index)}
                 >
-                  <h3 className="font-bold text-xl mb-2">{event.title}</h3>
-                  <p className="text-sm text-gray-600 mb-2">{event.date}</p>
-                  <p className="text-base mb-4">{event.description}</p>
-                  <p className="text-sm text-gray-600 mb-2">{event.hashtags}</p>
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h3 className="font-bold text-xl mb-2">{event.title}</h3>
+                      <p className="text-sm text-gray-600 mb-2">{event.date}</p>
+                    </div>
+                    <div className="text-2xl text-gray-500">
+                      {openEventIndex === index ? <MdExpandLess /> : <MdExpandMore />}
+                    </div>
+                  </div>
+                  <AnimatePresence>
+                    {openEventIndex === index && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-base mb-4">{event.description}</p>
+                        <p className="text-sm text-gray-600">{event.hashtags}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </motion.div>
             </TimelineContent>
