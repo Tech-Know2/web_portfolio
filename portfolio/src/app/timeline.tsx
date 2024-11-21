@@ -20,11 +20,11 @@ const events = [
   { title: "Space Farm Tycoon", description: "A city builder for Mars colonization, built in Scratch for a science project.", date: "February 2019", hashtags:"#Scratch, #Blocks", badge:"Project" },
   { title: "Admob Fundamentals", description: "Added monetization to my endless runner game.", date: "March 2019", hashtags:"#Monetization, #Unity, #Ads", badge:"Project" },
   { title: "QuiCase", description: "Launched a Shopify dropshipping site for phone cases.", date: "April 2019", hashtags:"#Shopify, #Entrepreneur", badge:"Project" },
-  { title: "Troop 219", description: "Created a website for an all-girls Scout BSA troop I helped establish.", date: "May 2019", hashtags:"#HTML, #CSS, #JS, #Joomla", badge:"Internship" },
+  { title: "Troop 219", description: "Helped establish one of the first all-girls BSA scout troops globally and created a custom website to manage their online presence, including features like RSVPs, events, calendars, inventory, and communication. The site was developed using Joomla, WordPress, Replit, HTML, CSS, and JavaScript.", date: "May 2019", hashtags:"#HTML, #CSS, #JS, #Joomla", badge:"Internship" },
   { title: "Cloud Mining", description: "Rented Azure servers for mining Litecoin and Bitcoin.", date: "July 2019", hashtags:"#Crypto, #BTC, #LTC", badge:"Project" },
   { title: "CryptoByte", description: "I launched a small altcoin after following an EatTheBlocks tutorial on the Matic test chain called CryptoByte. I minted a several million of them and then added the and some testnet Polygon to a uniswap pool for trading and liquidity.", date: "July 2019", hashtags:"#Polygon, #CryptoByte, #Crypto", badge:"Project" },
   { title: "Furry Prints", description: "Launched a print-on-demand store for pet products using Shopify.", date: "August 2019", hashtags:"#Shopify, #Entrepreneur", badge:"Project" },
-  { title: "Michelangelo's - Internship", description: "Helped bring a local business online during the pandemic.", date: "March 2020", hashtags:"#Shopify, #Internship", badge:"Internship" },
+  { title: "Michelangelo's - Internship", description: "Developed and launched an eCommerce website that generated $50k in sales within two months, helping a local business adapt to pandemic challenges. Streamlined operations by integrating legacy systems into an online portal and unifying POS and digital sales through tools like Shopify and Square, improving employee satisfaction and efficiency.", date: "March 2020", hashtags:"#Shopify, #Internship", badge:"Internship" },
   { title: "Middle School Graduation", description: "Graduated with a 4.0 in my CSteam pathway.", date: "June 2020", hashtags:"#HTML, #CSS, #JS, #C#", badge:"Personal" },
   { title: "Eagle Scout Project", description: "Earned the rank of Eagle after 2 years of work on my project.", date: "July 2022", hashtags:"#BSA, #Eagle", badge:"Project" },
   { title: "Rook Servers", description: "Launched my first business offering web hosting, development, and game services.", date: "January 2023", hashtags:"#Entrepreneur, #CyberPanel, #Pterodactyl", badge:"Project" },
@@ -83,6 +83,7 @@ export default function TimelineComponent() {
                         className="absolute top-0 right-0 transform translate-x-2 -translate-y-2 px-3 py-1 text-xs font-semibold uppercase text-black bg-white border border-black rounded-lg"
                         style={{
                           zIndex: 1,
+                          backgroundColor: event.badge === "Internship" ? "#9ca3af" : "white",
                         }}
                       >
                         {event.badge}

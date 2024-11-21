@@ -41,6 +41,10 @@ const AboutMe = () => {
           <div className="bg-white p-4 sm:p-6 rounded-lg space-y-3 shadow-md col-span-1 sm:col-span-2 lg:col-span-2">
             <Projects />
           </div>
+          {/* Test Scores Section */}
+          <div className="bg-white p-4 sm:p-6 rounded-lg space-y-3 shadow-md col-span-full">
+            <TestScores />
+          </div>
         </div>
       </div>
     </section>
@@ -213,6 +217,61 @@ const PlatformsTools = () => {
           </motion.li>
         ))}
       </motion.ul>
+    </motion.div>
+  );
+};
+
+const TestScores = () => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
+
+  return (
+    <motion.div
+      ref={ref}
+      className=""
+      initial={{ opacity: 0 }}
+      animate={inView ? { opacity: 1 } : { opacity: 0 }}
+      transition={{ duration: 1, delay: 0.5 }}
+    >
+      <h2 className="text-3xl font-semibold text-black mb-4 text-center">
+        Test Scores
+      </h2>
+      {/* Grid Layout */}
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4"
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 1, delay: 0.7 }}
+      >
+        {/* Test Scores List */}
+        {[
+          { test: "AP United States History", score: "5", date: "2023" },
+          { test: "AP Computer Science Principles", score: "3", date: "2023" },
+          { test: "AP Computer Science A", score: "3", date: "2024" },
+          { test: "AP Microeconomics", score: "5", date: "2024" },
+          { test: "AP Psychology", score: "3", date: "2024" },
+          { test: "AP Calculus BC", score: "3", date: "2024" },
+        ].map((test, index) => (
+          <motion.div
+              key={index}
+              className="bg-gray-50 border-black border p-4 rounded-lg shadow-md flex flex-col justify-between"
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{
+                opacity: { duration: 0.7, delay: 0.3 * index },
+                y: { duration: 0.7, delay: 0.3 * index },
+                type: "spring",
+                stiffness: 300,
+              }}
+              whileHover={{ scale: 1.05 }}
+            >
+            <div>
+              <h3 className="font-medium text-lg">{test.test}</h3>
+              <p className="text-sm text-gray-600">{test.date}</p>
+            </div>
+            <p className="font-semibold text-xl text-right">{test.score}</p>
+          </motion.div>
+        ))}
+      </motion.div>
     </motion.div>
   );
 };
