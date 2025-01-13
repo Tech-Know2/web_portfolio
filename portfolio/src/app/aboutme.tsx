@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiChevronRight } from "react-icons/fi";
+import { GoDash } from "react-icons/go";
 import { useInView } from "react-intersection-observer";
 
 const AboutMe = () => {
@@ -115,7 +116,7 @@ const EducationSection = () => {
     >
       <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Education</h2>
       {[ 
-        { degree: "BA of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028", gpa:"3.7 GPA" },
+        { degree: "BS of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028", gpa:"4.0 GPA" },
         { degree: "High School Diploma", institution: "Whitney High School", year: "2024", gpa:"4.5 GPA"  },
         { degree: "Silicon Vally Immersion Camp", institution: "Menlo College", year: "2023", gpa:"N/A"  },
       ].map((edu, index) => (
@@ -179,7 +180,7 @@ const PassionsInterests = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <FiChevronRight className="mr-3 text-black" /> {interest}
+            <GoDash className="mr-3 text-black" /> {interest}
           </motion.li>
         ))}
       </motion.ul>
@@ -213,7 +214,7 @@ const PlatformsTools = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <FiChevronRight className="mr-3 text-black" /> {tool}
+            <GoDash className="mr-3 text-black" /> {tool}
           </motion.li>
         ))}
       </motion.ul>
