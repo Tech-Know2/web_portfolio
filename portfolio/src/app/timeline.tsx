@@ -30,10 +30,11 @@ const events = [
   { title: "Rook Servers", description: "Launched my first business offering web hosting, development, and game services.", date: "January 2023", hashtags:"#Entrepreneur, #CyberPanel, #Pterodactyl", badge:"Project" },
   { title: "Table Top Games", description: "Launched an indie game studio with classmates.", date: "January 2023", hashtags:"#Unity, #Entrepreneur", badge:"Project" },
   { title: "Table Top Empires", description: "Developed a real-time, turn-based strategy game with Unity and Steam.", date: "January 2023", hashtags:"#Unity, #Steam, #C#", badge:"Project" },
-  { title: "Stater", description: "Developing an app integrating MoneyGram, Stellar, and Plaid for an alternative to traditional banking.", date: "January 2023", hashtags:"#MongoDB, #Typescript, #Stellar", badge:"Project" },
+  { title: "Stater", description: "Developing an app integrating Reown, Circle, Coinbase, KyberSwap, and Morpho for an alternative to traditional banking.", date: "January 2023", hashtags:"#Supabase, #Circle, #Coinbase, #Morpho, #Reown", badge:"Project" },
   { title: "High School Graduation", description: "Graduated with a 4.5 GPA from Whitney High School.", date: "June 2024", hashtags:"#Java, #SQL, #React", badge:"Personal" },
   { title: "ASU Polytechnic", description: "Started my Software Engineering degree at ASU Poly.", date: "June 2020", hashtags:"", badge:"Project" },
   { title: "Servotor", description: "The evolution of Rook Servers, built on open-source and community tools.", date: "August 2024", hashtags:"#CyberPanel, #Pterodactyl", badge:"Project" },
+  { title: "WalletDock", description: "A platform that allows for wallet swaps and wallet top-ups for free.", date: "March 2025", hashtags:"#Web3, #Thirdweb, #NextJS", badge:"Project" },
 ];
 
 export default function TimelineComponent() {
@@ -44,7 +45,7 @@ export default function TimelineComponent() {
   };
 
   return (
-    <>
+    <div className="pb-8">
       <div className="text-center">
         <h1 className="text-5xl pb-[5%] font-semibold">My Journey So Far</h1>
       </div>
@@ -83,7 +84,14 @@ export default function TimelineComponent() {
                         className="absolute top-0 right-0 transform translate-x-2 -translate-y-2 px-3 py-1 text-xs font-semibold uppercase text-black bg-white border border-black rounded-lg"
                         style={{
                           zIndex: 1,
-                          backgroundColor: event.badge === "Internship" ? "#9ca3af" : "white",
+                          backgroundColor:
+                            event.badge === "Internship"
+                              ? "#7f7f7f"
+                              : event.badge === "Project"
+                              ? "#a5a5a5"
+                              : event.badge === "Personal"
+                              ? "#cccccc"
+                              : "#f2f2f2",
                         }}
                       >
                         {event.badge}
@@ -113,6 +121,6 @@ export default function TimelineComponent() {
           </TimelineItem>
         ))}
       </Timeline>
-    </>
+    </div>
   );
 }

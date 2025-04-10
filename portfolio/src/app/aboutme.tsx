@@ -207,7 +207,7 @@ const PlatformsTools = () => {
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        {['Unity', 'Steamworks', 'Node.js', 'React, Next.js, & Vercel', 'Shopify & Woocommerce', 'Wordpress, Prestashop, Joomla', 'GitHub & SourceTree', 'SQL & NoSQL Databases (Supabase, MongoDB)', 'Visual Studio Code & JetBrains IDEs'].map((tool, index) => (
+        {['Unity', 'Steamworks', 'Node.js', 'React, Next.js, & Vercel', "Sanity, Medusa, Builder.io" , 'Shopify & Woocommerce', 'Wordpress, Prestashop, Joomla', 'GitHub & SourceTree', 'SQL & NoSQL Databases (Supabase, MongoDB)', 'Visual Studio Code & JetBrains IDEs'].map((tool, index) => (
           <motion.li
             key={index}
             className="flex items-center"
@@ -318,7 +318,7 @@ const Projects = () => {
           {
             title: "Stater - Personal Finance App",
             description:
-              "Building an inclusive personal finance application that offers free and accessible banking services to individuals worldwide, ensuring financial equality for all. Powered by Stellar, Plaid, MoneyGram, and Mastercard, this project has the potential to change the world for the better.",
+              "I am currently developing a web and mobile based platform that will allow anyone anywhere to manage their own finances through Web3 technologies. I have integrated with Reown for account abstracted smart wallets, then using KyberSwap for swapping technologies, Circle for Stablecoins and bridging, and then Morpho for lending. Eventually I will integrate with a platform for wire and ACH transfers, and credit/debit/prepaid cards.",
           },
           {
             title: "Table Top Empires - Strategy Game",
@@ -338,7 +338,7 @@ const Projects = () => {
           {
             title: "WalletDock",
             description:
-              "Developed my largest project on Scratch—a space simulation game where players can create and manage their own Mars settlement, simulating a small economy. Built for my middle school science midterm.",
+              "I made this using Thirdweb's account abstraction for crypto wallets across EVMs and then I also used Decent for swapping and bridging. This was a cool proof of concept that I made so that I could see how Web3 development occured.",
           },
         ].map((project, index) => (
           <motion.li

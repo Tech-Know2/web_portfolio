@@ -5,12 +5,20 @@ import { FiChevronRight } from "react-icons/fi";
 
 const projectsData = [
   {
+    title: "WalletDock",
+    description: "I made this using Thirdweb's account abstraction for crypto wallets across EVMs and then I also used Decent for swapping and bridging. This was a cool proof of concept that I made so that I could see how Web3 development occured.",
+    hashtags: "#NextJS, #Vercel, #Thirdweb, #Decent, #Web3",
+    github: "https://github.com/Tech-Know2/WalletFunder",
+    startDate: "March 2025",
+    endDate: "April 2025",
+  },
+  {
     title: "Servotor",
     description: "The evolution of Rook Servers, built on open-source and community tools. Developed with a grander vision and a completely unique, self-built frontend. Visit the site at servotor.vercel.app to explore it for yourself.",
     hashtags: "#Paymenter, #CyberPanel, #Pterodactyl",
     github: "https://github.com/Tech-Know2/Servotor",
     startDate: "August 2024",
-    endDate: "Present",
+    endDate: "March 2025",
   },
   {
     title: "Table Top Empires",
@@ -22,9 +30,9 @@ const projectsData = [
   },
   {
     title: "Stater",
-    description: "Currently developing a web and mobile app that integrates MoneyGram, Stellar, and Plaid to provide an alternative to traditional banking.",
-    hashtags: "#MongoDB, #Typescript, #Stellar",
-    github: "https://github.com/Tech-Know2/stater-outdated",
+    description: "I am currently developing a web and mobile based platform that will allow anyone anywhere to manage their own finances through Web3 technologies. I have integrated with Reown for account abstracted smart wallets, then using KyberSwap for swapping technologies, Circle for Stablecoins and bridging, and then Morpho for lending. Eventually I will integrate with a platform for wire and ACH transfers, and credit/debit/prepaid cards.",
+    hashtags: "#Supabase, #NextJS, #Reown, #Plaid, #Coinbase, #Circle",
+    github: "https://github.com/Tech-Know2/HarrisGroup",
     startDate: "January 2023",
     endDate: "Present",
   },
@@ -58,7 +66,7 @@ const projectsData = [
 
 const Projects = () => {
   return (
-    <section className="pt-2 pb-16">
+    <section className="pt-8 pb-16">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.h1
