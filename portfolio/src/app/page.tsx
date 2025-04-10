@@ -7,10 +7,6 @@ import Scroll from "./scroll";
 import AboutMe from "./aboutme";
 import Timeline from "./timeline";
 import Projects from "./projects";
-import dynamic from "next/dynamic";
-
-// Dynamically import the Blog component (Server Component)
-const Blog = dynamic(() => import("./Blog"), { ssr: false });
 
 export default function Home() {
   return (

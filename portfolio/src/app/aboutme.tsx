@@ -335,6 +335,11 @@ const Projects = () => {
             description:
               "Developed my largest project on Scratch—a space simulation game where players can create and manage their own Mars settlement, simulating a small economy. Built for my middle school science midterm.",
           },
+          {
+            title: "WalletDock",
+            description:
+              "Developed my largest project on Scratch—a space simulation game where players can create and manage their own Mars settlement, simulating a small economy. Built for my middle school science midterm.",
+          },
         ].map((project, index) => (
           <motion.li
             key={index}
