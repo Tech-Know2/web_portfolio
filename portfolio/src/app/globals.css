@@ -7,7 +7,15 @@ html {
 }
 
 body {
-    background-color: #f9f9f9; /* Light background */
-    background-image: radial-gradient(circle, #000 1px, transparent 0.1px); /* Dot grid */
-    background-size: 20px 20px; /* Grid spacing */
+    /* Default light mode styles */
+    background-color: #ffffff; /* White background for light mode */
+    background-image: radial-gradient(circle, #000 1px, transparent 0.1px); /* Black dots on light background */
+    background-size: 20px 20px; /* Dot grid size for light mode */
+}
+
+body.dark-mode {
+    /* Dark mode styles */
+    background-color: #000000; /* Black background for dark mode */
+    background-image: radial-gradient(circle, #fff 1px, transparent 0.1px); /* White dots on black background */
+    background-size: 20px 20px; /* Dot grid size for dark mode */
 }
