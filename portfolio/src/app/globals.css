@@ -19,3 +19,49 @@ body.dark-mode {
     background-image: radial-gradient(circle, #fff 1px, transparent 0.1px); /* White dots on black background */
     background-size: 20px 20px; /* Dot grid size for dark mode */
 }
+
+@layer components {
+    /* Paragraphs get our Merriweather font and a Google Docs–like line spacing */
+    .prose p {
+      
+      line-height: 1.7;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    /* Headers with increased spacing between them */
+    .prose h1 {
+      
+      font-size: 2.5rem;
+      margin-top: 2.5rem;  /* More top spacing */
+      margin-bottom: 1rem;
+    }
+    .prose h2 {
+      
+      font-size: 2rem;
+      margin-top: 2.25rem;
+      margin-bottom: 1rem;
+    }
+    .prose h3 {
+      
+      font-size: 1.75rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .prose h4,
+    .prose h5,
+    .prose h6 {
+      
+      font-size: 1.5rem;
+      margin-top: 1.75rem;
+      margin-bottom: 1rem;
+    }
+    /* Bold text */
+    .prose strong {
+      font-weight: bold;
+    }
+    /* Links inherit the parent's text color but are underlined */
+    .prose a {
+      text-decoration: underline;
+      color: inherit;
+    }
+}

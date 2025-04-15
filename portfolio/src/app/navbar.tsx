@@ -18,6 +18,12 @@ const Navbar = () => {
           <div className="relative flex items-center justify-between h-16">
             <div className="hidden sm:flex sm:ml-6 flex-grow justify-center items-center gap-3">
               <Link
+                href="/"
+                className="text-black hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-md font-medium"
+              >
+                Home
+              </Link>
+              <Link
                 href="/#about-me"
                 className="text-black hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-md font-medium"
               >

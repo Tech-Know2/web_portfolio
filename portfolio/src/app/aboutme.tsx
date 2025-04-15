@@ -234,7 +234,7 @@ const TestScores = () => {
       transition={{ duration: 1, delay: 0.5 }}
     >
       <h2 className="text-3xl font-semibold text-black mb-4 text-center">
-        Test Scores
+        Test Scores & Academic Achievements
       </h2>
       {/* Grid Layout */}
       <motion.div
@@ -245,6 +245,7 @@ const TestScores = () => {
       >
         {/* Test Scores List */}
         {[
+          { test: "Deans List", score: "1x", date: "2024" },
           { test: "AP United States History", score: "5", date: "2023" },
           { test: "AP Computer Science Principles", score: "3", date: "2023" },
           { test: "AP Computer Science A", score: "3", date: "2024" },

@@ -5,6 +5,14 @@ import { FiChevronRight } from "react-icons/fi";
 
 const projectsData = [
   {
+    title: "EconSim",
+    description: "I am trying to combine my skills at game dev with my skills at web app development and make an economic simulator using CRUD actions and strong database design.",
+    hashtags: "#NextJS, #Supabase",
+    github: "https://github.com/Tech-Know2/econsim",
+    startDate: "March 2025",
+    endDate: "Current",
+  },
+  {
     title: "WalletDock",
     description: "I made this using Thirdweb's account abstraction for crypto wallets across EVMs and then I also used Decent for swapping and bridging. This was a cool proof of concept that I made so that I could see how Web3 development occured.",
     hashtags: "#NextJS, #Vercel, #Thirdweb, #Decent, #Web3",
