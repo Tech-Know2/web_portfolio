@@ -65,7 +65,7 @@ const LanguageSkills = () => {
       transition={{ duration: 1, delay: 0.3 }}
     >
       <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Language Proficiency</h2>
-      {['C#', 'Java', 'TypeScript', 'Kotlin', 'Rust', 'SQL'].map((language, index) => (
+      {['C#', 'Java', 'C', 'TypeScript', 'Kotlin', 'Rust', 'SQL'].map((language, index) => (
         <motion.div
           key={index}
           className="flex items-center justify-between"
@@ -83,10 +83,11 @@ const LanguageSkills = () => {
             {[...Array(5)].map((_, ratingIndex) => {
               const rating = (index === 0 && ratingIndex < 5) || 
                              (index === 1 && ratingIndex < 4) || 
-                             (index === 2 && ratingIndex < 2) || 
+                             (index === 2 && ratingIndex < 3) || 
                              (index === 3 && ratingIndex < 2) || 
                              (index === 4 && ratingIndex < 2) || 
-                             (index === 5 && ratingIndex < 2);
+                             (index === 5 && ratingIndex < 2) || 
+                             (index === 6 && ratingIndex < 2);
 
               return (
                 <div
