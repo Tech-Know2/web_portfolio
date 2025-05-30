@@ -117,7 +117,7 @@ const EducationSection = () => {
     >
       <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Education</h2>
       {[ 
-        { degree: "BS of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028", gpa:"4.0 GPA" },
+        { degree: "BS of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028", gpa:"3.88 GPA" },
         { degree: "High School Diploma", institution: "Whitney High School", year: "2024", gpa:"4.5 GPA"  },
         { degree: "Silicon Vally Immersion Camp", institution: "Menlo College", year: "2023", gpa:"N/A"  },
       ].map((edu, index) => (
