@@ -246,7 +246,7 @@ const TestScores = () => {
       >
         {/* Test Scores List */}
         {[
-          { test: "Deans List", score: "1x", date: "2024" },
+          { test: "Deans List", score: "2x", date: "ASU" },
           { test: "AP United States History", score: "5", date: "2023" },
           { test: "AP Computer Science Principles", score: "3", date: "2023" },
           { test: "AP Computer Science A", score: "3", date: "2024" },
