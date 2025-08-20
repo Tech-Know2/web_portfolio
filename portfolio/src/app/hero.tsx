@@ -34,7 +34,7 @@ export default function Hero() {
               ref={ref}
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl text-black leading-tight">
-                I&apos;m pursuing a B.S. in Software Engineering and minoring in Economics at ASU Polytech
+                I&apos;m pursuing a B.S. in Software Engineering and minoring in Economics at ASU Polytechnic
               </h2>
             </motion.div>
           </div>
@@ -80,14 +80,14 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 1, delay: 0.8 }}
+                transition={{ duration: 1, delay: 0.7 }}
                 ref={ref} 
               >
                 <a href="#projects">
                   <motion.div
                     className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
                   />
-                  Stater
+                  Ecommerce Web App
                   <span className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     &rarr;
                   </span>
@@ -105,7 +105,7 @@ export default function Hero() {
                   <motion.div
                     className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
                   />
-                  Econ Sim
+                  Stater
                   <span className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     &rarr;
                   </span>

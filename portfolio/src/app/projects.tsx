@@ -5,6 +5,14 @@ import { FiChevronRight } from "react-icons/fi";
 
 const projectsData = [
   {
+    title: "Ecommerce Website",
+    description: "I interned for Stiver Optics, building them a fully fledged ecommerce website. For the coloud management and cloud stack I used the open source tool Coolify. I used it to auto deploy and run my PostgreSQL, Redis, and MinIO DBs, along with my Frontend, Server, and Worker instances of the website. I built email templates, search functions, a reviews system, and I'm in the process of integrating with Odoo and QuickBooks.",
+    hashtags: "#NextJS, #MedusaJS, #Coolify, #Hetzner, #Namecheap",
+    github: "",
+    startDate: "August 2025",
+    endDate: "Current",
+  },
+  {
     title: "EconSim",
     description: "I am trying to combine my skills at game dev with my skills at web app development and make an economic simulator using CRUD actions and strong database design.",
     hashtags: "#NextJS, #Supabase",
