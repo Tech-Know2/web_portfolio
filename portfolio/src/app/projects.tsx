@@ -8,7 +8,7 @@ const projectsData = [
     title: "Ecommerce Website",
     description: "I interned for Stiver Optics, building them a fully fledged ecommerce website. For the cloud management and cloud stack I used the open source tool Coolify. I used it to auto deploy and run my PostgreSQL, Redis, and MinIO DBs, along with my Frontend, Server, and Worker instances of the website. I built email templates, search functions, a reviews system, and I'm in the process of integrating with Odoo and QuickBooks.",
     hashtags: "#NextJS, #MedusaJS, #Coolify, #Hetzner, #Namecheap",
-    github: "store.stiveroptics.com",
+    github: "",
     startDate: "August 2025",
     endDate: "Current",
   },
