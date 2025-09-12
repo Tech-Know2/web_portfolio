@@ -8,7 +8,7 @@ const projectsData = [
     title: "Ecommerce Website",
     description: "I interned for Stiver Optics, building them a fully fledged ecommerce website. For the cloud management and cloud stack I used the open source tool Coolify. I used it to auto deploy and run my PostgreSQL, Redis, and MinIO DBs, along with my Frontend, Server, and Worker instances of the website. I built email templates, search functions, a reviews system, and I'm in the process of integrating with Odoo and QuickBooks.",
     hashtags: "#NextJS, #MedusaJS, #Coolify, #Hetzner, #Namecheap",
-    github: "",
+    github: "https://store.stiveroptics.com",
     startDate: "August 2025",
     endDate: "Current",
   },
@@ -62,7 +62,7 @@ const projectsData = [
   },
   {
     title: "Girls Scout Troop 219 Website",
-    description: "Designed and developed a prototype website in HTML, CSS, and JS for one of the first all-girls Scout BSA troops. I then rebuilt it in Joomla so they could maintain it themselves. Additionally, I helped them establish the structure and foundation for their troop, as I was a leader in my own troop.",
+    description: "Designed and developed a prototype website in HTML, CSS, and JS for one of the first all-girls Scout BSA troops in Northern California. I then rebuilt it in Joomla so they could maintain it themselves. Additionally, I helped them establish the structure and foundation for their troop, as I was a leader in my own troop.",
     hashtags: "#coFounder, #Internship",
     github: "https://github.com/Tech-Know2",
     startDate: "May 2019",
@@ -96,12 +96,9 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
           {projectsData.map((project, index) => (
-            <motion.div
+            <div
               key={index}
               className="bg-white p-4 sm:p-6 rounded-lg space-y-3 shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
             >
               <h3 className="text-xl font-semibold py-[1%]">{project.title}</h3>
               <p className="text-sm text-black py-[1%]">
@@ -118,7 +115,7 @@ const Projects = () => {
                 <span>View on GitHub</span>
                 <FiChevronRight />
               </a>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

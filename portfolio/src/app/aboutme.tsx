@@ -165,15 +165,15 @@ const PassionsInterests = () => {
         transition={{ duration: 1, delay: 0.5 }}
       >
         {[
-          "Entrepreneurship and Business",
+          "Finance and Economics",
           "CeFi & DeFi",
-          "Aerospace",
-          "Video Game Development",
-          "Reading Science Fiction",
-          "Formula One and Motorsports",
-          "Hard & Punk Rock",
-          "The Outdoors",
-          "World History"
+          "Aerospace and Defense",
+          "Vertical Farming",
+          "Science Fiction",
+          "F1 and Motorsports",
+          "Punk Rock",
+          "Nature",
+          "History"
         ].map((interest, index) => (
           <motion.li
             key={index}
@@ -208,7 +208,7 @@ const PlatformsTools = () => {
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        {['Unity', 'Steamworks', 'Node.js', 'React, Next.js, & Vercel', "Sanity & MedusaJS" , 'GitHub & SourceTree', 'SQL & NoSQL Databases (Supabase, MongoDB, PostgreSQL)', 'Redis & MinIO', 'VS Code & JetBrains IDEs', 'Coolify', ].map((tool, index) => (
+        {['Unity, Steamworks', 'Node.js', 'React, Next.js, & Vercel', "Sanity, MedusaJS, PayloadCMS" , 'GitHub & SourceTree', 'SQL & NoSQL Databases (Supabase, MongoDB, PostgreSQL)', 'Redis & MinIO', 'VS Code & JetBrains IDEs', 'Coolify', ].map((tool, index) => (
           <motion.li
             key={index}
             className="flex items-center"
@@ -315,7 +315,7 @@ const Projects = () => {
           {
             title: "Ecommerce Website",
             description:
-              "I built a website for a local business (Stiver Optics) using Coolify to manage my cloud platform, MedusaJS for the commerce engine, and NextJS for the frontend. I built email templates, connected PostgreSQL, Redis, and MinIO databases, deployed the frontend/server/worker instances with auto redeploys through GitHub and so much more.",
+              "I built a website for a local business (Stiver Optics) using Coolify to manage my cloud platform, MedusaJS for the commerce engine, and NextJS with PayloadCMS for the frontend. I built email templates, connected PostgreSQL, Redis, and MinIO databases, deployed the frontend/server/worker instances with auto redeploys through GitHub and so much more.",
           },
           {
             title: "Servotor - Cloud Compute Services",
