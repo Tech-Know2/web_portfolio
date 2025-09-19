@@ -13,7 +13,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Scroll />
       <Navbar />
-      <section>
+      <section id="">
         <Hero />
       </section>
       <section id="about-me">

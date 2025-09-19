@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { FiChevronRight } from "react-icons/fi";
 
 const projectsData = [
@@ -10,14 +9,6 @@ const projectsData = [
     hashtags: "#NextJS, #MedusaJS, #Coolify, #Hetzner, #Namecheap",
     github: "https://store.stiveroptics.com",
     startDate: "August 2025",
-    endDate: "Current",
-  },
-  {
-    title: "EconSim",
-    description: "I am trying to combine my skills at game dev with my skills at web app development and make an economic simulator using CRUD actions and strong database design.",
-    hashtags: "#NextJS, #Supabase",
-    github: "https://github.com/Tech-Know2/econsim",
-    startDate: "March 2025",
     endDate: "Current",
   },
   {
@@ -85,14 +76,7 @@ const Projects = () => {
     <section className="pt-8 pb-16">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <motion.h1
-          className="text-4xl sm:text-5xl font-bold text-black mb-8 text-center pb-10"
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Personal Projects
-        </motion.h1>
+        <h1 className="text-4xl sm:text-5xl font-bold text-black mb-8 text-center pb-10">Personal Projects</h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
           {projectsData.map((project, index) => (

@@ -108,10 +108,13 @@ export default function TimelineComponent() {
   return (
     <div className="pb-8">
       <div className="text-center">
-        <h1 className="text-5xl pb-[5%] font-semibold">My Journey So Far</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold text-black mb-8 text-center pb-10">
+          My Journey So Far
+        </h1>
       </div>
 
-      <div className="flex justify-center gap-12 sm:gap-2 md:gap-4">
+      {/* Desktop/Web Layout (Timeline + Details) */}
+      <div className="hidden md:flex justify-center gap-12 sm:gap-2 md:gap-4">
         {/* Left Side Timeline */}
         <div>
           <Timeline position="right">
@@ -119,12 +122,13 @@ export default function TimelineComponent() {
               <TimelineItem key={index}>
                 {/* Date on left */}
                 <TimelineOppositeContent
-                  sx={{ 
-                    fontSize: "0.9rem", 
+                  sx={{
+                    fontSize: "0.9rem",
                     color: "black",
                     transition: "all 0.2s ease-in-out",
                     "&:hover": {
-                      transform: selectedEvent === index ? "scale(1.2)" : "scale(1.1)",
+                      transform:
+                        selectedEvent === index ? "scale(1.2)" : "scale(1.1)",
                     },
                   }}
                   align="right"
@@ -140,13 +144,17 @@ export default function TimelineComponent() {
                       borderColor: "black",
                       borderWidth: "2px",
                       bgcolor: selectedEvent === index ? "black" : "transparent",
-                      transform: selectedEvent === index ? "scale(1.3)" : "scale(1)",
+                      transform:
+                        selectedEvent === index ? "scale(1.3)" : "scale(1)",
                       transition: "all 0.2s ease-in-out",
                       padding: "7px",
                       cursor: "pointer",
                       "&:hover": {
-                        transform: selectedEvent === index ? "scale(1.35)" : "scale(1.2)",
-                        bgcolor: 'gray'
+                        transform:
+                          selectedEvent === index
+                            ? "scale(1.35)"
+                            : "scale(1.2)",
+                        bgcolor: "gray",
                       },
                     }}
                     onClick={() => setSelectedEvent(index)}
@@ -177,39 +185,102 @@ export default function TimelineComponent() {
                   style={{
                     backgroundColor:
                       events[selectedEvent].badge === "Internship"
-                        ? "#7f7f7f"
+                        ? "#edcd2b"
                         : events[selectedEvent].badge === "Project"
-                        ? "#a5a5a5"
+                        ? "#4cc219"
                         : events[selectedEvent].badge === "Personal"
-                        ? "#cccccc"
+                        ? "#e36f10"
                         : "#f2f2f2",
                   }}
                 >
                   {events[selectedEvent].badge}
                 </div>
-                <h3 className="font-bold text-2xl mb-2">{events[selectedEvent].title}</h3>
-                <p className="text-sm text-gray-600 mb-2">{events[selectedEvent].date}</p>
+                <h3 className="font-bold text-2xl mb-2">
+                  {events[selectedEvent].title}
+                </h3>
+                <p className="text-sm text-gray-600 mb-2">
+                  {events[selectedEvent].date}
+                </p>
                 <p className="mb-4">{events[selectedEvent].description}</p>
-                <p className="text-sm text-gray-600">{events[selectedEvent].hashtags}</p>
+                <p className="text-sm text-gray-600">
+                  {events[selectedEvent].hashtags}
+                </p>
               </motion.div>
             )}
           </AnimatePresence>
 
-          {/* Navigation Buttons */}
           <div className="flex gap-4 mt-4">
-            <button 
+            <button
               onClick={handlePrev}
               className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-gray-100 transition"
             >
               <MdArrowBack size={20} />
             </button>
-            <button 
+            <button
               onClick={handleNext}
               className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-gray-100 transition"
             >
               <MdArrowForward size={20} />
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile Layout (Full width card + arrows) */}
+      <div className="md:hidden flex flex-col items-center">
+        <AnimatePresence mode="wait">
+          {selectedEvent !== null && (
+            <motion.div
+              key={selectedEvent}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.2 }}
+              className="p-6 bg-white border rounded-lg shadow-lg w-[90%]" // 5% padding each side
+            >
+              <div
+                className="inline-block mt-3 px-3 py-1 text-xs font-semibold uppercase rounded-lg mb-[1%]"
+                style={{
+                  backgroundColor:
+                    events[selectedEvent].badge === "Internship"
+                      ? "#edcd2b"
+                      : events[selectedEvent].badge === "Project"
+                      ? "#4cc219"
+                      : events[selectedEvent].badge === "Personal"
+                      ? "#e36f10"
+                      : "#f2f2f2",
+                }}
+              >
+                {events[selectedEvent].badge}
+              </div>
+              <h3 className="font-bold text-2xl mb-2">
+                {events[selectedEvent].title}
+              </h3>
+              <p className="text-sm text-gray-600 mb-2">
+                {events[selectedEvent].date}
+              </p>
+              <p className="mb-4">{events[selectedEvent].description}</p>
+              <p className="text-sm text-gray-600">
+                {events[selectedEvent].hashtags}
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Navigation Buttons */}
+        <div className="flex gap-4 mt-4">
+          <button
+            onClick={handlePrev}
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-gray-100 transition"
+          >
+            <MdArrowBack size={20} />
+          </button>
+          <button
+            onClick={handleNext}
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-gray-100 transition"
+          >
+            <MdArrowForward size={20} />
+          </button>
         </div>
       </div>
     </div>
