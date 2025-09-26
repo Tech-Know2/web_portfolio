@@ -4,67 +4,66 @@ import { FiChevronRight } from "react-icons/fi";
 
 const projectsData = [
   {
-    title: "Ecommerce Website",
-    description: "I interned for Stiver Optics, building them a fully fledged ecommerce website. For the cloud management and cloud stack I used the open source tool Coolify. I used it to auto deploy and run my PostgreSQL, Redis, and MinIO DBs, along with my Frontend, Server, and Worker instances of the website. I built email templates, search functions, a reviews system, and I'm in the process of integrating with Odoo and QuickBooks.",
-    hashtags: "#NextJS, #MedusaJS, #Coolify, #Hetzner, #Namecheap",
-    github: "https://store.stiveroptics.com",
+    title: "E-Commerce Website",
+    description:
+      "Interned at Stiver Optics, where I developed a fully functional e-commerce website. For cloud management, I utilized the open-source tool Coolify to automatically deploy and manage PostgreSQL, Redis, and MinIO databases, along with the frontend, server, and worker instances. Implemented features such as email templates, search functionality, and a review system, and am currently integrating with Odoo and QuickBooks.",
+    link: "https://store.stiveroptics.com",
     startDate: "August 2025",
-    endDate: "Current",
+    endDate: "Present",
   },
   {
     title: "WalletDock",
-    description: "I made this using Thirdweb's account abstraction for crypto wallets across EVMs and then I also used Decent for swapping and bridging. This was a cool proof of concept that I made so that I could see how Web3 development occured.",
-    hashtags: "#NextJS, #Vercel, #Thirdweb, #Decent, #Web3",
-    github: "https://github.com/Tech-Know2/WalletFunder",
+    description:
+      "Built a proof of concept using Thirdweb's account abstraction for crypto wallets across EVM chains, combined with Decent for swapping and bridging. This project served as an exploration of Web3 development workflows and practical applications.",
+    link: "https://github.com/Tech-Know2/WalletFunder",
     startDate: "March 2025",
     endDate: "April 2025",
   },
   {
     title: "Servotor",
-    description: "The evolution of Rook Servers, built on open-source and community tools. Developed with a grander vision and a completely unique, self-built frontend. Visit the site at servotor.vercel.app to explore it for yourself.",
-    hashtags: "#Paymenter, #CyberPanel, #Pterodactyl",
-    github: "https://github.com/Tech-Know2/Servotor",
+    description:
+      "The successor to Rook Servers, built entirely on open-source and community-driven tools. Designed with a custom frontend and a broader long-term vision. Backend built with Paymenter, Cyberpanel, and Pterodactyl.",
+    link: "https://github.com/Tech-Know2/Servotor",
     startDate: "August 2024",
     endDate: "March 2025",
   },
   {
     title: "Table Top Empires",
-    description: "Developed a real-time, turn-based strategy game with Unity and Steam. It began as a project with my game studio, Table Top Games, but I continued as a solo developer after the group split following high school.",
-    hashtags: "#Unity, #Steam, #C#",
-    github: "https://github.com/Tech-Know2/RTS-Unity-Game",
+    description:
+      "Worked on building a real-time, turn-based strategy game with Unity and Steam integration. Initially developed as part of my game studio, Table Top Games, I later continued solo development after the group disbanded post-high school.",
+    link: "https://github.com/Tech-Know2/RTS-Unity-Game",
     startDate: "January 2023",
-    endDate: "Present",
+    endDate: "Terminated",
   },
   {
     title: "Stater",
-    description: "I am currently developing a web and mobile based platform that will allow anyone anywhere to manage their own finances through Web3 technologies. I have integrated with Reown for account abstracted smart wallets, then using KyberSwap for swapping technologies, Circle for Stablecoins and bridging, and then Morpho for lending. Eventually I will integrate with a platform for wire and ACH transfers, and credit/debit/prepaid cards.",
-    hashtags: "#Supabase, #NextJS, #Reown, #Plaid, #Coinbase, #Circle",
-    github: "https://github.com/Tech-Know2/HarrisGroup",
+    description:
+      "Began the development of a web and mobile platform enabling users worldwide to manage personal finances through Web3 technologies. Integrated with Reown for account-abstracted smart wallets, KyberSwap for token swaps, Circle for stablecoins and bridging, and Morpho for lending. Future plans include integrations for wire and ACH transfers, as well as debit, credit, and prepaid card services.",
+    link: "https://github.com/Tech-Know2/HarrisGroup",
     startDate: "January 2023",
     endDate: "Present",
   },
   {
     title: "Rook Servers",
-    description: "My first attempt at developing a web hosting and game server hosting platform. Built with WiseCP, CyberPanel, and Pterodactyl, and hosted on Vultr and Ionos, the setup was functional but poorly executed. Despite its shortcomings, it allowed me to validate my hypothesis that there are more efficient ways to run this business than relying on reseller hosting.",
-    hashtags: "#WiseCp, #CyberPanel, #Pterodactyl",
-    github: "https://github.com/Tech-Know2",
+    description:
+      "First attempt at building a web and game server hosting platform. Utilized WiseCP, CyberPanel, and Pterodactyl, hosted on Vultr and Ionos. While the implementation had shortcomings, the project validated my hypothesis that more efficient solutions exist compared to existing traditional reseller hosting plans.",
+    link: "https://youtu.be/VdD_rBO_SJU",
     startDate: "January 2023",
     endDate: "June 2023",
   },
   {
-    title: "Girls Scout Troop 219 Website",
-    description: "Designed and developed a prototype website in HTML, CSS, and JS for one of the first all-girls Scout BSA troops in Northern California. I then rebuilt it in Joomla so they could maintain it themselves. Additionally, I helped them establish the structure and foundation for their troop, as I was a leader in my own troop.",
-    hashtags: "#coFounder, #Internship",
-    github: "https://github.com/Tech-Know2",
+    title: "Girl Scout Troop 219 Website",
+    description:
+      "Designed and developed a prototype website in HTML, CSS, and JavaScript for one of the first all-girls Scout BSA troops in Northern California. Later rebuilt the site in Joomla to ensure maintainability. Also assisted the troop in establishing its structure and foundation, drawing from my experience as a several time patrol and scout leader.",
+    link: "",
     startDate: "May 2019",
     endDate: "January 2020",
   },
-  
   {
     title: "Quibbit",
-    description: "An 'Unblocked' flash game website with over 200 games in the content catalog, created so my friends and other students could bypass our middle school's game-blocking system.",
-    hashtags: "#GoogleSites, #Flash, #Adsense",
-    github: "https://github.com/tech-know2",
+    description:
+      "Created an 'unblocked' flash game website with a catalog of over 200 games, designed to provide classmates access despite school network restrictions. Served as an early introduction to web development and user engagement.",
+    link: "https://youtu.be/JRiIGwQAxcs",
     startDate: "September 2018",
     endDate: "June 2021",
   },
@@ -89,14 +88,13 @@ const Projects = () => {
                 {project.startDate} - {project.endDate}
               </p>
               <p className="text-base text-black py-[1%]">{project.description}</p>
-              <p className="text-sm text-black py-[1%]">{project.hashtags}</p>
               <a
-                href={project.github}
+                href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-black flex items-center space-x-2 pt-[4%] group-hover:text-blue-500"
               >
-                <span>View on GitHub</span>
+                <span>Learn More</span>
                 <FiChevronRight />
               </a>
             </div>

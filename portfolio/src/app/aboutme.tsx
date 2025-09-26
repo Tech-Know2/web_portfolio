@@ -52,46 +52,49 @@ const LanguageSkills = () => {
   return (
     <motion.div
       ref={ref}
-      className="space-y-3"
+      className="space-y-6"
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, delay: 0.3 }}
     >
-      <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Language Proficiency</h2>
-      {['C#', 'Java', 'C', 'TypeScript', 'Kotlin', 'Rust', 'SQL'].map((language, index) => (
-        <motion.div
-          key={index}
-          className="flex items-center justify-between"
-          initial={{ opacity: 0, x: -50 }}
-          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
-          transition={{
-            duration: 0.7,
-            delay: index * 0.2,
-            type: "spring",
-            stiffness: 100,
-          }}
-        >
-          <h3 className="text-lg sm:text-xl font-medium">{language}</h3>
-          <div className="flex space-x-2 mt-2">
-            {[...Array(5)].map((_, ratingIndex) => {
-              const rating = (index === 0 && ratingIndex < 5) || 
-                             (index === 1 && ratingIndex < 4) || 
-                             (index === 2 && ratingIndex < 3) || 
-                             (index === 3 && ratingIndex < 2) || 
-                             (index === 4 && ratingIndex < 2) || 
-                             (index === 5 && ratingIndex < 2) || 
-                             (index === 6 && ratingIndex < 2);
+      <h2 className="text-2xl sm:text-3xl font-bold text-black text-center border-b-2 border-black inline-block pb-2">
+        Language Proficiency
+      </h2>
 
-              return (
-                <div
-                  key={ratingIndex}
-                  className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 ${rating ? 'bg-black' : 'bg-gray-300'}`}
-                ></div>
-              );
-            })}
-          </div>
-        </motion.div>
-      ))}
+      {/* Proficient */}
+      <div>
+        <h3 className="text-xl font-semibold text-black mb-2 uppercase tracking-wide">
+          Proficient
+        </h3>
+        <ul className="space-y-1 text-black">
+          <li className="flex items-center"><GoDash className="mr-2" /> C#</li>
+          <li className="flex items-center"><GoDash className="mr-2" /> Java</li>
+        </ul>
+      </div>
+
+      {/* Experienced / Familiar */}
+      <div>
+        <h3 className="text-xl font-semibold text-black mb-2 uppercase tracking-wide">
+          Experienced / Familiar
+        </h3>
+        <ul className="space-y-1 text-black">
+          <li className="flex items-center"><GoDash className="mr-2" /> C</li>
+          <li className="flex items-center"><GoDash className="mr-2" /> C++</li>
+          <li className="flex items-center"><GoDash className="mr-2" /> TypeScript</li>
+          <li className="flex items-center"><GoDash className="mr-2" /> SQL</li>
+        </ul>
+      </div>
+
+      {/* Learning */}
+      <div>
+        <h3 className="text-xl font-semibold text-black mb-2 uppercase tracking-wide">
+          Learning
+        </h3>
+        <ul className="space-y-1 text-black">
+          <li className="flex items-center"><GoDash className="mr-2" /> Kotlin</li>
+          <li className="flex items-center"><GoDash className="mr-2" /> Rust</li>
+        </ul>
+      </div>
     </motion.div>
   );
 };
@@ -111,7 +114,7 @@ const EducationSection = () => {
       <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Education</h2>
       {[ 
         { degree: "BS of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028", gpa:"3.88 GPA" },
-        { degree: "High School Diploma", institution: "Whitney High School", year: "2024", gpa:"4.5 GPA"  },
+        { degree: "High School Diploma", institution: "Whitney High School", year: "2024", gpa:"4.25 GPA"  },
         { degree: "Silicon Vally Immersion Camp", institution: "Menlo College", year: "2023", gpa:"N/A"  },
       ].map((edu, index) => (
         <motion.div
@@ -142,45 +145,36 @@ const EducationSection = () => {
 const PassionsInterests = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
 
+  const interests = [
+    "Economics",
+    "Decentralized Finance",
+    "Aerospace",
+    "Motorsports Engineering",
+  ];
+
   return (
     <motion.div
       ref={ref}
-      className="space-y-4"
+      className="space-y-6"
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Passions & Interests</h2>
-      <motion.ul
-        className="text-lg text-black space-y-2"
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 1, delay: 0.5 }}
-      >
-        {[
-          "Finance and Economics",
-          "CeFi & DeFi",
-          "Aerospace and Defense",
-          "Vertical Farming",
-          "Science Fiction",
-          "F1 and Motorsports",
-          "Punk Rock",
-          "Nature",
-          "History"
-        ].map((interest, index) => (
-          <motion.li
-            key={index}
-            className="flex items-center"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <GoDash className="mr-3 text-black" /> {interest}
-          </motion.li>
+      <h2 className="text-2xl sm:text-3xl font-bold text-black text-center border-b-2 border-black inline-block pb-2">
+        Passions & Interests
+      </h2>
+
+      <ul className="space-y-2 text-black text-lg">
+        {interests.map((interest, index) => (
+          <li key={index} className="flex items-center">
+            <GoDash className="mr-2 text-black" /> {interest}
+          </li>
         ))}
-      </motion.ul>
+      </ul>
     </motion.div>
   );
 };
+
 
 // Platforms and Tools Section
 const PlatformsTools = () => {
@@ -195,79 +189,58 @@ const PlatformsTools = () => {
       transition={{ duration: 1, delay: 0.5 }}
     >
       <h2 className="text-3xl font-semibold text-black mb-4 text-center">Platforms & Tools</h2>
-      <motion.ul
-        className="text-lg text-black space-y-2"
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 1, delay: 0.5 }}
-      >
-        {['Unity, Steamworks', 'Node.js', 'React, Next.js, & Vercel', "Sanity, MedusaJS, PayloadCMS" , 'GitHub & SourceTree', 'SQL & NoSQL Databases (Supabase, MongoDB, PostgreSQL)', 'Redis & MinIO', 'VS Code & JetBrains IDEs', 'Coolify', ].map((tool, index) => (
-          <motion.li
+      <ul className="text-lg text-black space-y-2">
+        {['Unity, Steamworks', 'React, Next.js, & Vercel', "Sanity, MedusaJS, PayloadCMS" , 'GitHub & SourceTree', 'Supabase, MongoDB, PostgreSQL', 'Redis & MinIO', 'VS Code & JetBrains IDEs', 'Coolify & Dokploy', 'Docker'].map((tool, index) => (
+          <li
             key={index}
             className="flex items-center"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
           >
             <GoDash className="mr-3 text-black" /> {tool}
-          </motion.li>
+          </li>
         ))}
-      </motion.ul>
+      </ul>
     </motion.div>
   );
 };
 
+// Test Scores & Academic Achievements Section
 const TestScores = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
+
+  const tests = [
+    { test: "Dean’s List", score: "2x", date: "ASU" },
+    { test: "AP Calculus BC", score: "3", date: "2024" },
+    { test: "AP Computer Science A", score: "3", date: "2024" },
+    { test: "AP Microeconomics", score: "5", date: "2024" },
+    { test: "AP Psychology", score: "3", date: "2024" },
+    { test: "AP United States History", score: "5", date: "2023" },
+    { test: "AP Computer Science Principles", score: "3", date: "2023" },
+  ];
 
   return (
     <motion.div
       ref={ref}
-      className=""
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
-      transition={{ duration: 1, delay: 0.5 }}
+      transition={{ duration: 1, delay: 0.3 }}
+      className="space-y-6"
     >
-      <h2 className="text-3xl font-semibold text-black mb-4 text-center">
-        Test Scores & Academic Achievements
-      </h2>
-      {/* Grid Layout */}
-      <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4"
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 1, delay: 0.7 }}
-      >
-        {/* Test Scores List */}
-        {[
-          { test: "Deans List", score: "2x", date: "ASU" },
-          { test: "AP United States History", score: "5", date: "2023" },
-          { test: "AP Computer Science Principles", score: "3", date: "2023" },
-          { test: "AP Computer Science A", score: "3", date: "2024" },
-          { test: "AP Microeconomics", score: "5", date: "2024" },
-          { test: "AP Psychology", score: "3", date: "2024" },
-          { test: "AP Calculus BC", score: "3", date: "2024" },
-        ].map((test, index) => (
-          <motion.div
-              key={index}
-              className="bg-gray-50 border-black border p-4 rounded-lg shadow-md flex flex-col justify-between"
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{
-                opacity: { duration: 0.7, delay: 0.3 * index },
-                y: { duration: 0.7, delay: 0.3 * index },
-                type: "spring",
-                stiffness: 300,
-              }}
-              whileHover={{ scale: 1.05 }}
-            >
+      <h2 className="text-3xl font-semibold text-black mb-4 text-center">Test Scores & Academic Achievements</h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tests.map((test, index) => (
+          <div
+            key={index}
+            className="bg-white border border-black p-4 rounded-md shadow-sm flex flex-col justify-between"
+          >
             <div>
-              <h3 className="font-medium text-lg">{test.test}</h3>
+              <h3 className="font-semibold text-lg text-black">{test.test}</h3>
               <p className="text-sm text-gray-600">{test.date}</p>
             </div>
-            <p className="font-semibold text-xl text-right">{test.score}</p>
-          </motion.div>
+            <p className="font-bold text-xl text-right text-black">{test.score}</p>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
@@ -293,12 +266,7 @@ const Projects = () => {
       transition={{ duration: 1, delay: 0.7 }}
     >
       <h2 className="text-3xl font-semibold text-black mb-4 text-center">Projects I&apos;ve Built</h2>
-      <motion.ul
-        className="space-y-4"
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 1, delay: 0.7 }}
-      >
+      <ul className="space-y-4" >
         {[
           {
             title: "Eagle Project - Boy Scouts of America",
@@ -341,23 +309,16 @@ const Projects = () => {
               "I made this using Thirdweb's account abstraction for crypto wallets across EVMs and then I also used Decent for swapping and bridging. This was a cool proof of concept that I made so that I could see how Web3 development occured.",
           },
         ].map((project, index) => (
-          <motion.li
+          <li
             key={index}
             className="text-lg text-black hover:text-black transition-colors duration-300 relative"
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 1, delay: 0.7 + index * 0.2 }}
           >
             {/* Title with click functionality */}
             <div
               className="flex flex-row cursor-pointer"
               onClick={() => toggleDescription(index)}
             >
-              <motion.div
-                className="flex items-center"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
+              <div className="flex items-center">
                 {/* Change the icon depending on the expanded state */}
                 <FiChevronRight
                   className={`mr-3 text-black transform ${
@@ -365,7 +326,7 @@ const Projects = () => {
                   } transition-transform duration-300`}
                 />
                 {project.title}
-              </motion.div>
+              </div>
             </div>
 
             {/* Description (Visible if the project is expanded) */}
@@ -385,9 +346,9 @@ const Projects = () => {
                 {project.description}
               </motion.p>
             )}
-          </motion.li>
+          </li>
         ))}
-      </motion.ul>
+      </ul>
     </motion.div>
   );
 };

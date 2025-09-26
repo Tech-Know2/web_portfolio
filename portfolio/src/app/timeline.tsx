@@ -106,7 +106,7 @@ export default function TimelineComponent() {
   };
 
   return (
-    <div className="pb-8">
+    <div className="pb-8 max-w-7xl mx-auto px-6">
       <div className="text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-black mb-8 text-center pb-10">
           My Journey So Far
