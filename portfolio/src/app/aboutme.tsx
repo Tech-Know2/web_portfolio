@@ -57,7 +57,7 @@ const LanguageSkills = () => {
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, delay: 0.3 }}
     >
-      <h2 className="text-2xl sm:text-3xl font-bold text-black text-center border-b-2 border-black inline-block pb-2">
+      <h2 className="text-2xl sm:text-3xl font-bold text-black text-center border-b-2 border-black pb-2">
         Language Proficiency
       </h2>
 
@@ -111,7 +111,9 @@ const EducationSection = () => {
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4 text-center">Education</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-black text-center border-b-2 border-black pb-2">
+        Education
+      </h2>
       {[ 
         { degree: "BS of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028", gpa:"3.88 GPA" },
         { degree: "High School Diploma", institution: "Whitney High School", year: "2024", gpa:"4.25 GPA"  },
@@ -160,7 +162,7 @@ const PassionsInterests = () => {
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <h2 className="text-2xl sm:text-3xl font-bold text-black text-center border-b-2 border-black inline-block pb-2">
+      <h2 className="text-2xl sm:text-3xl font-bold text-black text-center border-b-2 border-black pb-2">
         Passions & Interests
       </h2>
 
@@ -188,7 +190,9 @@ const PlatformsTools = () => {
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <h2 className="text-3xl font-semibold text-black mb-4 text-center">Platforms & Tools</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-black text-center border-b-2 border-black pb-2">
+        Platforms & Tools
+      </h2>
       <ul className="text-lg text-black space-y-2">
         {['Unity, Steamworks', 'React, Next.js, & Vercel', "Sanity, MedusaJS, PayloadCMS" , 'GitHub & SourceTree', 'Supabase, MongoDB, PostgreSQL', 'Redis & MinIO', 'VS Code & JetBrains IDEs', 'Coolify & Dokploy', 'Docker'].map((tool, index) => (
           <li
@@ -225,7 +229,9 @@ const TestScores = () => {
       transition={{ duration: 1, delay: 0.3 }}
       className="space-y-6"
     >
-      <h2 className="text-3xl font-semibold text-black mb-4 text-center">Test Scores & Academic Achievements</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-black text-center border-b-2 border-black pb-2">
+        Test Scores & Achievements
+      </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {tests.map((test, index) => (
@@ -265,7 +271,10 @@ const Projects = () => {
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, delay: 0.7 }}
     >
-      <h2 className="text-3xl font-semibold text-black mb-4 text-center">Projects I&apos;ve Built</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold text-black text-center border-b-2 border-black pb-2">
+        My Projects
+      </h2>
+
       <ul className="space-y-4" >
         {[
           {

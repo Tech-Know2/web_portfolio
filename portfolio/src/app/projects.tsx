@@ -83,11 +83,11 @@ const Projects = () => {
               key={index}
               className="bg-white p-4 sm:p-6 rounded-lg space-y-3 shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
             >
-              <h3 className="text-xl font-semibold py-[1%]">{project.title}</h3>
-              <p className="text-sm text-black py-[1%]">
+              <h3 className="text-xl font-semibold underline">{project.title}</h3>
+              <p className="text-sm text-black">
                 {project.startDate} - {project.endDate}
               </p>
-              <p className="text-base text-black py-[1%]">{project.description}</p>
+              <p className="text-base text-black">{project.description}</p>
               <a
                 href={project.link}
                 target="_blank"
