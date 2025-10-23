@@ -4,7 +4,15 @@ import { FiChevronRight } from "react-icons/fi";
 
 const projectsData = [
   {
-    title: "E-Commerce Website",
+    title: "Phestus",
+    description:
+      "I am working on launching my web development and hosting agency for static and ecommerce websites. Static websites are built wih NextJS and PayloadCMS to make them dynamic and customizable, but they lack ecommerce capabilities. The Ecommerce websites will be built using tools like Saleor, MedusaJS, and Vendure. Taking what I learned from Stiver and turning it into a cloud hosting system by using Docker and docker deployment software like Terraform, Dokploy, and more.",
+    link: "https://phestus.com",
+    startDate: "October 2025",
+    endDate: "Present",
+  },
+  {
+    title: "Stiver Optics",
     description:
       "Interned at Stiver Optics, where I developed a fully functional e-commerce website. For cloud management, I utilized the open-source tool Coolify to automatically deploy and manage PostgreSQL, Redis, and MinIO databases, along with the frontend, server, and worker instances. Implemented features such as email templates, search functionality, and a review system, and am currently integrating with Odoo and QuickBooks.",
     link: "https://store.stiveroptics.com",
@@ -33,15 +41,15 @@ const projectsData = [
       "Worked on building a real-time, turn-based strategy game with Unity and Steam integration. Initially developed as part of my game studio, Table Top Games, I later continued solo development after the group disbanded post-high school.",
     link: "https://github.com/Tech-Know2/RTS-Unity-Game",
     startDate: "January 2023",
-    endDate: "Terminated",
+    endDate: "Sunset",
   },
   {
     title: "Stater",
     description:
-      "Began the development of a web and mobile platform enabling users worldwide to manage personal finances through Web3 technologies. Integrated with Reown for account-abstracted smart wallets, KyberSwap for token swaps, Circle for stablecoins and bridging, and Morpho for lending. Future plans include integrations for wire and ACH transfers, as well as debit, credit, and prepaid card services.",
+      "Began the development of a web and mobile platform enabling users worldwide to manage personal finances through Web3 technologies. Integrated with Reown for account-abstracted smart wallets, KyberSwap for token swaps, Circle for stablecoins and bridging, and Morpho for lending. Future plans include integrations with Plaid for wire and ACH transfers, as well as debit, credit, and prepaid card services.",
     link: "https://github.com/Tech-Know2/HarrisGroup",
     startDate: "January 2023",
-    endDate: "Present",
+    endDate: "Sunset",
   },
   {
     title: "Rook Servers",

@@ -5,6 +5,13 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FaLinkedin, FaYoutube, FaHandshake, FaGithub, FaBlogger } from "react-icons/fa";
 
+const projectLinks = [
+  { title: "Phestus", href: "#projects", delay: 0.7 },
+  { title: "Servotor", href: "#projects", delay: 0.8 },
+  { title: "Stiver Optics", href: "#projects", delay: 0.9 },
+];
+
+
 export default function Hero() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
@@ -50,85 +57,35 @@ export default function Hero() {
             >
               Projects in Development
             </motion.h1>
+
             <motion.ul
               className="space-y-6"
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
-              ref={ref} 
+              ref={ref}
             >
-              <motion.li
-                className="relative group text-xl sm:text-2xl font-normal cursor-pointer"
-                whileHover={{ scale: 1.05 }}
-                initial={{ opacity: 0 }}
-                animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 1, delay: 0.7 }}
-                ref={ref} 
-              >
-                <a href="#projects">
-                  <motion.div
-                    className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
-                  />
-                  Servotor
-                  <span className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    &rarr;
-                  </span>
-                </a>
-              </motion.li>
-              <motion.li
-                className="relative group text-xl sm:text-2xl font-normal cursor-pointer"
-                whileHover={{ scale: 1.05 }}
-                initial={{ opacity: 0 }}
-                animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 1, delay: 0.7 }}
-                ref={ref} 
-              >
-                <a href="#projects">
-                  <motion.div
-                    className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
-                  />
-                  Ecommerce Web App
-                  <span className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    &rarr;
-                  </span>
-                </a>
-              </motion.li>
-              <motion.li
-                className="relative group text-xl sm:text-2xl font-normal cursor-pointer"
-                whileHover={{ scale: 1.05 }}
-                initial={{ opacity: 0 }}
-                animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 1, delay: 0.8 }}
-                ref={ref} 
-              >
-                <a href="#projects">
-                  <motion.div
-                    className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
-                  />
-                  Stater
-                  <span className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    &rarr;
-                  </span>
-                </a>
-              </motion.li>
-              <motion.li
-                className="relative group text-xl sm:text-2xl font-normal cursor-pointer"
-                whileHover={{ scale: 1.05 }}
-                initial={{ opacity: 0 }}
-                animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 1, delay: 0.9 }}
-                ref={ref} 
-              >
-                <a href="#projects">
-                  <motion.div
-                    className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
-                  />
-                  Tabletop Empires
-                  <span className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    &rarr;
-                  </span>
-                </a>
-              </motion.li>
+              {projectLinks.map((project, index) => (
+                <motion.li
+                  key={index}
+                  className="relative group text-xl sm:text-2xl font-normal cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  initial={{ opacity: 0 }}
+                  animate={inView ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ duration: 1, delay: project.delay }}
+                  ref={ref}
+                >
+                  <a href={project.href}>
+                    <motion.div
+                      className="absolute bottom-0 left-0 w-full h-[2px] bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"
+                    />
+                    {project.title}
+                    <span className="absolute right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      &rarr;
+                    </span>
+                  </a>
+                </motion.li>
+              ))}
             </motion.ul>
 
             {/* Social media icons */}

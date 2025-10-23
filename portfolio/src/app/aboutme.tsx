@@ -283,7 +283,7 @@ const Projects = () => {
               "I spent 2 years working with the Chester California's Parks and Recreactions Department to build several benches for their community on a donated outdoor trail and walking area. I collaborated with local government, businesses, and volutneers to build benches for a community 3 hours away from my home.",
           },
           {
-            title: "Ecommerce Website",
+            title: "Stiver Optics",
             description:
               "I built a website for a local business (Stiver Optics) using Coolify to manage my cloud platform, MedusaJS for the commerce engine, and NextJS with PayloadCMS for the frontend. I built email templates, connected PostgreSQL, Redis, and MinIO databases, deployed the frontend/server/worker instances with auto redeploys through GitHub and so much more.",
           },
