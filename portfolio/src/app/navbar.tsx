@@ -5,18 +5,14 @@ const Navbar = () => {
   return (
     <div className="pb-[1%] pt-[2%]">
       <div className="w-[90%] mx-auto bg-white rounded-lg shadow-lg">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative flex items-center justify-between h-16">
+        <div className="max-w-7xl mx-auto relative">
+          <div className="flex items-center justify-between h-16 relative">
             
-            {/* Mobile: Blog left */}
-            <div className="sm:hidden flex items-center">
-              <Link href="/blog" title="Blog">
-                <BsFillBookmarksFill size={23} className="text-black ml-[10px]" />
-              </Link>
-            </div>
+            {/* Empty div to keep center alignment */}
+            <div className="flex-1"></div>
 
             {/* Desktop Links (centered) */}
-            <div className="hidden sm:flex sm:ml-6 flex-grow justify-center items-center gap-3">
+            <div className="hidden sm:flex absolute left-1/2 transform -translate-x-1/2 gap-3">
               <Link
                 href="/"
                 className="text-black hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-md font-medium"
@@ -43,22 +39,20 @@ const Navbar = () => {
               </Link>
             </div>
 
-            {/* Resume Button + Blog (Desktop), Resume Button (Mobile Right) */}
+            {/* Right side: Resume + Blog */}
             <div className="flex items-center gap-3">
               <a
-                href="/College Resume.pdf"
+                href="/JamesHarrisTechnical.pdf"
                 download
                 className="text-white bg-black hover:bg-neutral-800 py-2 px-4 text-md font-medium no-underline rounded"
               >
                 Download Resume
               </a>
               
-              {/* Desktop Blog Icon */}
-              <div className="hidden sm:flex">
-                <Link href="/blog" title="Blog">
-                  <BsFillBookmarksFill size={23} className="text-black" />
-                </Link>
-              </div>
+              {/* Blog Icon */}
+              <Link href="/blog" title="Blog">
+                <BsFillBookmarksFill size={23} className="text-black" />
+              </Link>
             </div>
 
           </div>

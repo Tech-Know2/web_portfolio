@@ -194,7 +194,7 @@ const PlatformsTools = () => {
         Platforms & Tools
       </h2>
       <ul className="text-lg text-black space-y-2">
-        {['Unity, Steamworks', 'React, Next.js, & Vercel', "Sanity, MedusaJS, PayloadCMS" , 'GitHub & SourceTree', 'Supabase, MongoDB, PostgreSQL', 'Redis & MinIO', 'VS Code & JetBrains IDEs', 'Coolify & Dokploy', 'Docker'].map((tool, index) => (
+        {['Unity, Steamworks', 'React, Next.js, & Vercel', "Sanity, MedusaJS, PayloadCMS" , 'GitHub & SourceTree', 'Supabase, MongoDB, PostgreSQL', 'Redis & MinIO', 'VS Code & JetBrains IDEs', 'Coolify & Dokploy', 'Docker & Kubernetes', 'Helm Charts'].map((tool, index) => (
           <li
             key={index}
             className="flex items-center"
