@@ -47,7 +47,7 @@ const projectsData = [
     title: "Stater",
     description:
       "Began the development of a web and mobile platform enabling users worldwide to manage personal finances through Web3 technologies. Integrated with Reown for account-abstracted smart wallets, KyberSwap for token swaps, Circle for stablecoins and bridging, and Morpho for lending. Future plans include integrations with Plaid for wire and ACH transfers, as well as debit, credit, and prepaid card services.",
-    link: "https://github.com/Tech-Know2/HarrisGroup",
+    link: "https://github.com/Tech-Know2/Stater-Finance",
     startDate: "January 2023",
     endDate: "Sunset",
   },
