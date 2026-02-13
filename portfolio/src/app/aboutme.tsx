@@ -114,10 +114,10 @@ const EducationSection = () => {
       <h2 className="text-2xl sm:text-3xl font-bold text-black text-center border-b-2 border-black pb-2">
         Education
       </h2>
-      {[ 
-        { degree: "BS of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028", gpa:"3.88 GPA" },
-        { degree: "High School Diploma", institution: "Whitney High School", year: "2024", gpa:"4.25 GPA"  },
-        { degree: "Silicon Vally Immersion Camp", institution: "Menlo College", year: "2023", gpa:"N/A"  },
+      {[
+        { degree: "BS of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028", gpa: "3.88 GPA" },
+        { degree: "High School Diploma", institution: "Whitney High School", year: "2024", gpa: "4.25 GPA" },
+        { degree: "Silicon Vally Immersion Camp", institution: "Menlo College", year: "2023", gpa: "N/A" },
       ].map((edu, index) => (
         <motion.div
           key={index}
@@ -194,7 +194,7 @@ const PlatformsTools = () => {
         Platforms & Tools
       </h2>
       <ul className="text-lg text-black space-y-2">
-        {['Unity, Steamworks', 'React, Next.js, & Vercel', "Sanity, MedusaJS, PayloadCMS" , 'GitHub & SourceTree', 'Supabase, MongoDB, PostgreSQL', 'Redis & MinIO', 'VS Code & JetBrains IDEs', 'Coolify & Dokploy', 'Docker & Kubernetes', 'Helm Charts'].map((tool, index) => (
+        {['Unity, Steamworks', 'React, Next.js, & Vercel', "MedusaJS, PayloadCMS", 'GitHub & SourceTree', 'Supabase, MongoDB, PostgreSQL', 'Redis & MinIO', 'VS Code & JetBrains IDEs', 'Coolify & Dokploy', 'Docker'].map((tool, index) => (
           <li
             key={index}
             className="flex items-center"
@@ -212,7 +212,7 @@ const TestScores = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
 
   const tests = [
-    { test: "Dean’s List", score: "2x", date: "ASU" },
+    { test: "Dean's List", score: "2x", date: "ASU" },
     { test: "AP Calculus BC", score: "3", date: "2024" },
     { test: "AP Computer Science A", score: "3", date: "2024" },
     { test: "AP Microeconomics", score: "5", date: "2024" },
@@ -278,6 +278,11 @@ const Projects = () => {
       <ul className="space-y-4" >
         {[
           {
+            title: "PayloadCMS Commerce",
+            description:
+              "This is a completly custom ecommerce platform built with PayloadCMS, NextJS, PostgreSQL, Redis, and BullMQ. Its event driven using Redis for event management. PayloadCMS is for the frontend and backend management. It manages and types the schemas, collections, and types. The system is modular and composable with the ability for developers to build modules for admins to interact with. if you want to know more, check out my LinkedIn posts on it.",
+          },
+          {
             title: "Eagle Project - Boy Scouts of America",
             description:
               "I spent 2 years working with the Chester California's Parks and Recreactions Department to build several benches for their community on a donated outdoor trail and walking area. I collaborated with local government, businesses, and volutneers to build benches for a community 3 hours away from my home.",
@@ -308,11 +313,6 @@ const Projects = () => {
               "Created and launched a flash game streaming platform in middle school to provide students with accessible entertainment, bypassing restrictive school network blocks.",
           },
           {
-            title: "Space Farm Tycoon - Simulation Game",
-            description:
-              "Developed my largest project on Scratch—a space simulation game where players can create and manage their own Mars settlement, simulating a small economy. Built for my middle school science midterm.",
-          },
-          {
             title: "WalletDock",
             description:
               "I made this using Thirdweb's account abstraction for crypto wallets across EVMs and then I also used Decent for swapping and bridging. This was a cool proof of concept that I made so that I could see how Web3 development occured.",
@@ -330,9 +330,8 @@ const Projects = () => {
               <div className="flex items-center">
                 {/* Change the icon depending on the expanded state */}
                 <FiChevronRight
-                  className={`mr-3 text-black transform ${
-                    expandedProject === index ? "rotate-90" : "rotate-0"
-                  } transition-transform duration-300`}
+                  className={`mr-3 text-black transform ${expandedProject === index ? "rotate-90" : "rotate-0"
+                    } transition-transform duration-300`}
                 />
                 {project.title}
               </div>

@@ -12,6 +12,14 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const events = [
   { 
+    title: "PayloadCMS Commerce", 
+    description: "Designing and developing a complete ecommerce solution from scratch using a blank slate PayloadCMS project conected to Redis and BullMQ. It is event drive, with a modular provider & module based design similar to that of MedusaJS. The goal is to combine MedusaJS architecture with PayloadCMS design. This will allow for drag and drop frontends, emails, posts, docs, and more. Along with a powerful and custom backend that is directly tied into it.", 
+    date: "August 2025", 
+    hashtags:"#PayloadCMS, #NextJS, #Redis, #Docker, #Ecommerce", 
+    badge:"Project",
+    importance: "1"
+  },
+  { 
     title: "Stiver Optics", 
     description: "Designed, developed, and deployed a custom ecommerce platform for Stiver Optics using MedusaJS, NextJS, and Payload CMS. Integrated Stripe, Algolia, Redis, PostgreSQL, and MinIO to deliver advanced functionality. Built custom order flows, automated marketing, and email systems, while managing full-stack infrastructure via Docker and Coolify. Collaborated closely with the client through frequent iterations and provided post-launch support to ensure long-term success.", 
     date: "August 2025", 

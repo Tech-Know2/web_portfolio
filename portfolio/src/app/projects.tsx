@@ -4,10 +4,10 @@ import { FiChevronRight } from "react-icons/fi";
 
 const projectsData = [
   {
-    title: "Phestus",
+    title: "PayloadCMS",
     description:
-      "I am working on launching my web development and hosting agency for static and ecommerce websites. Static websites are built wih NextJS and PayloadCMS to make them dynamic and customizable, but they lack ecommerce capabilities. The Ecommerce websites will be built using tools like Saleor, MedusaJS, and Vendure. Taking what I learned from Stiver and turning it into a cloud hosting system by using Docker and docker deployment software like Terraform, Dokploy, and more.",
-    link: "https://phestus.com",
+      "This is a completly custom ecommerce platform built with PayloadCMS, NextJS, PostgreSQL, Redis, and BullMQ. Its event driven using Redis for event management. PayloadCMS is for the frontend and backend management. It manages and types the schemas, collections, and types. The system is modular and composable with the ability for developers to build modules for admins to interact with. if you want to know more, check out my LinkedIn posts on it.",
+    link: "https://www.linkedin.com/in/james-cooper-harris/",
     startDate: "October 2025",
     endDate: "Present",
   },

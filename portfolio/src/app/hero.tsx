@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import { FaLinkedin, FaYoutube, FaHandshake, FaGithub, FaBlogger } from "react-icons/fa";
 
 const projectLinks = [
-  { title: "Phestus", href: "#projects", delay: 0.7 },
+  { title: "PayloadCMS Commerce", href: "#projects", delay: 0.7 },
   { title: "Servotor", href: "#projects", delay: 0.8 },
   { title: "Stiver Optics", href: "#projects", delay: 0.9 },
 ];
