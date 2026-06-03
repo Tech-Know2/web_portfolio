@@ -69,6 +69,7 @@ const LanguageSkills = () => {
         <ul className="space-y-1 text-black">
           <li className="flex items-center"><GoDash className="mr-2" /> C#</li>
           <li className="flex items-center"><GoDash className="mr-2" /> Java</li>
+          <li className="flex items-center"><GoDash className="mr-2" /> TypeScript</li>
         </ul>
       </div>
 
@@ -80,7 +81,6 @@ const LanguageSkills = () => {
         <ul className="space-y-1 text-black">
           <li className="flex items-center"><GoDash className="mr-2" /> C</li>
           <li className="flex items-center"><GoDash className="mr-2" /> C++</li>
-          <li className="flex items-center"><GoDash className="mr-2" /> TypeScript</li>
           <li className="flex items-center"><GoDash className="mr-2" /> SQL</li>
         </ul>
       </div>
@@ -115,7 +115,7 @@ const EducationSection = () => {
         Education
       </h2>
       {[
-        { degree: "BS of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028", gpa: "3.66 GPA" },
+        { degree: "BS of Software Engineering", institution: "Arizona State University - Polytechnic", year: "2028", gpa: "3.61 GPA" },
         { degree: "High School Diploma", institution: "Whitney High School", year: "2024", gpa: "4.25 GPA" },
         { degree: "Silicon Vally Immersion Camp", institution: "Menlo College", year: "2023", gpa: "N/A" },
       ].map((edu, index) => (
@@ -194,7 +194,7 @@ const PlatformsTools = () => {
         Platforms & Tools
       </h2>
       <ul className="text-lg text-black space-y-2">
-        {['Unity, Steamworks', 'React, Next.js, & Vercel', "MedusaJS, PayloadCMS", 'GitHub & SourceTree', 'Supabase, MongoDB, PostgreSQL', 'Redis & MinIO', 'VS Code & JetBrains IDEs', 'Coolify & Dokploy', 'Docker'].map((tool, index) => (
+        {['Unity, Steamworks', 'React, Next.js, & ExpressJS', "MedusaJS, PayloadCMS", 'GitHub & SourceTree', 'Supabase, MongoDB, PostgreSQL', 'Redis & MinIO', 'VS Code & JetBrains IDEs', 'Coolify & Dokploy', 'Docker'].map((tool, index) => (
           <li
             key={index}
             className="flex items-center"
@@ -212,7 +212,7 @@ const TestScores = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
 
   const tests = [
-    { test: "Dean's List", score: "2x", date: "ASU" },
+    { test: "Dean's List", score: "3x", date: "ASU" },
     { test: "AP Calculus BC", score: "3", date: "2024" },
     { test: "AP Computer Science A", score: "3", date: "2024" },
     { test: "AP Microeconomics", score: "5", date: "2024" },

@@ -11,6 +11,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const events = [
+  {
+    title: "Golden1", 
+    description: "I am honored to begin working at Golden1 this summer. I will update this after the internship is over so that the data is up to date, and accurate.", 
+    date: "June 2026", 
+    hashtags:"#CreditUnion, #Finance, #NotCustomerItsMember", 
+    badge:"Internship",
+    importance: "1"
+  },
+  { 
+    title: "@devCMS", 
+    description: "Designing and developing a headless ecommerce platform to fix the aches and pains that I experienced when working with PayloadCMS. The platform is truly headless, as in it is framework agnostic. It enables the creation of schemas and configs for mutliple database types. Provides the ability to scope schemas for caching on redis. Provides support for hooks, validation, typing, and auth out of the box. It also includes tools for building out event driven systems that power typed workflows, steps, jobs, and more. The goal of this system is to help me and other developers deploy scalable backends and worker instances through code within minutes not weeks.", 
+    date: "May 2026", 
+    hashtags:"#headlessCMS, #Package, #PostgreSQL, #Prisma, #Redis", 
+    badge:"Project",
+    importance: "1"
+  },
   { 
     title: "PayloadCMS Commerce", 
     description: "Designing and developing a complete ecommerce solution from scratch using a blank slate PayloadCMS project conected to Redis and BullMQ. It is event drive, with a modular provider & module based design similar to that of MedusaJS. The goal is to combine MedusaJS architecture with PayloadCMS design. This will allow for drag and drop frontends, emails, posts, docs, and more. Along with a powerful and custom backend that is directly tied into it.", 

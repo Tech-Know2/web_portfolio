@@ -4,9 +4,17 @@ import { FiChevronRight } from "react-icons/fi";
 
 const projectsData = [
   {
-    title: "PayloadCMS",
+    title: "@devCMS",
     description:
-      "This is a completly custom ecommerce platform built with PayloadCMS, NextJS, PostgreSQL, Redis, and BullMQ. Its event driven using Redis for event management. PayloadCMS is for the frontend and backend management. It manages and types the schemas, collections, and types. The system is modular and composable with the ability for developers to build modules for admins to interact with. if you want to know more, check out my LinkedIn posts on it.",
+      "This is a project that I am working on in tandem with my ecommerce project. It is heavily inspired by PayloadCMS, however, it is being designed to fix the biggest flaws and missign features I noticed when working with PayloadCMS. I have added in event management, jobs, workflows, steps, caching, and more. The goal of this project is to allow developers to setup framework agnostic backens that support caching and highly customized event management workflows.",
+    link: "https://www.linkedin.com/in/james-cooper-harris/",
+    startDate: "May 2026",
+    endDate: "Present",
+  },
+  {
+    title: "PayloadCMS Ecommerce Platform",
+    description:
+      "This is a highly customizeable, whitelabel ecommerce platform. The frontend is built with PayloadCMS, NextJS, Puck, and React Flow. It allows admins to build pages with a custom built drag and drop editor, design workflows using a visual workflow editor, and manage all ecommerce scoped data (products, subscriptions, shipping rates, pricing, zones, regions, emails, etc). The backend is built with ExpressJS for event, workflow, and step processing allowing for endlessly customziable and expandable business solutions.",
     link: "https://www.linkedin.com/in/james-cooper-harris/",
     startDate: "October 2025",
     endDate: "Present",
