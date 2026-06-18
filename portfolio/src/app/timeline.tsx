@@ -1,188 +1,84 @@
 "use client";
 
 import React, { useState } from "react";
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
-import TimelineDot from '@mui/lab/TimelineDot';
+import Timeline from "@mui/lab/Timeline";
+import TimelineItem from "@mui/lab/TimelineItem";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import TimelineConnector from "@mui/lab/TimelineConnector";
+import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
+import TimelineDot from "@mui/lab/TimelineDot";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
+import { TimelineEvent } from "@/lib/types";
 
-const events = [
-  {
-    title: "Golden1", 
-    description: "I am honored to begin working at Golden1 this summer. I will update this after the internship is over so that the data is up to date, and accurate.", 
-    date: "June 2026", 
-    hashtags:"#CreditUnion, #Finance, #NotCustomerItsMember", 
-    badge:"Internship",
-    importance: "1"
-  },
-  { 
-    title: "@devCMS", 
-    description: "Designing and developing a headless ecommerce platform to fix the aches and pains that I experienced when working with PayloadCMS. The platform is truly headless, as in it is framework agnostic. It enables the creation of schemas and configs for mutliple database types. Provides the ability to scope schemas for caching on redis. Provides support for hooks, validation, typing, and auth out of the box. It also includes tools for building out event driven systems that power typed workflows, steps, jobs, and more. The goal of this system is to help me and other developers deploy scalable backends and worker instances through code within minutes not weeks.", 
-    date: "May 2026", 
-    hashtags:"#headlessCMS, #Package, #PostgreSQL, #Prisma, #Redis", 
-    badge:"Project",
-    importance: "1"
-  },
-  { 
-    title: "PayloadCMS Commerce", 
-    description: "Designing and developing a complete ecommerce solution from scratch using a blank slate PayloadCMS project conected to Redis and BullMQ. It is event drive, with a modular provider & module based design similar to that of MedusaJS. The goal is to combine MedusaJS architecture with PayloadCMS design. This will allow for drag and drop frontends, emails, posts, docs, and more. Along with a powerful and custom backend that is directly tied into it.", 
-    date: "August 2025", 
-    hashtags:"#PayloadCMS, #NextJS, #Redis, #Docker, #Ecommerce", 
-    badge:"Project",
-    importance: "1"
-  },
-  { 
-    title: "Stiver Optics", 
-    description: "Designed, developed, and deployed a custom ecommerce platform for Stiver Optics using MedusaJS, NextJS, and Payload CMS. Integrated Stripe, Algolia, Redis, PostgreSQL, and MinIO to deliver advanced functionality. Built custom order flows, automated marketing, and email systems, while managing full-stack infrastructure via Docker and Coolify. Collaborated closely with the client through frequent iterations and provided post-launch support to ensure long-term success.", 
-    date: "August 2025", 
-    hashtags:"#NextJS, #Coolify, #MedusaJS, #PayloadCMS, #Internship", 
-    badge:"Internship",
-    importance: "1"
-  },
-  { 
-    title: "WalletDock", 
-    description: "Built a platform for free wallet swaps and top-ups utilizing NextJS, and ThirdWeb.", 
-    date: "March 2025", 
-    hashtags:"#Web3, #Thirdweb, #NextJS", 
-    badge:"Project",
-    importance: "2"
-  },
-  { 
-    title: "Servotor", 
-    description: "Evolved Rook Servers using open-source tools such as Cyberpanel, Paymenter, Pterodactyl, and a wide variety of other tools.", 
-    date: "August 2024", 
-    hashtags:"#CyberPanel, #Pterodactyl", 
-    badge:"Project" ,
-    importance: "2"
-  },
-  { 
-    title: "ASU Polytechnic", 
-    description: "Started my major in Software Engineering anf my minor in Economics at ASU Polytechnic.", 
-    date: "June 2024", 
-    hashtags:"#SoftwareEngineering, #University, #ASU, #College, #Economics", 
-    badge:"Personal" ,
-    importance: "3"
-  },
-  { 
-    title: "High School Graduation", 
-    description: "Graduated with 4.5 GPA from Whitney High School. Within the top 5% of all students in California", 
-    date: "June 2024", 
-    hashtags:"#Java, #SQL, #React", 
-    badge:"Personal" ,
-    importance: "3"
-  },
-  { 
-    title: "Stater", 
-    description: "Developing Web3 banking alternative app.", 
-    date: "January 2023", 
-    hashtags:"#Supabase, #Circle, #Coinbase, #Morpho, #Reown", 
-    badge:"Project" ,
-    importance: "2"
-  },
-  { 
-    title: "Table Top Games", 
-    description: "Founded indie game studio; released Table Top Empires on Steam.", 
-    date: "January 2023", 
-    hashtags:"#Unity, #Steam, #C#", 
-    badge:"Project" ,
-    importance: "2"
-  },
-  { 
-    title: "Rook Servers", 
-    description: "Launched first business offering hosting and game services.", 
-    date: "January 2023", 
-    hashtags:"#Entrepreneur, #CyberPanel, #Pterodactyl", 
-    badge:"Project" ,
-    importance: "2"
-  },
-  { 
-    title: "Michelangelo's - Internship", 
-    description: "Built eCommerce site generating $50k in 2 months for a local business allowing them to survive and grow during the pandemic.", 
-    date: "March 2020", 
-    hashtags:"#Shopify, #Internship", 
-    badge:"Internship" ,
-    importance: "1"
-  },
-  { 
-    title: "Troop 219 Website", 
-    description: "Helped found Troop 219, then designed and developed a custom site for one of the first all-girls BSA troops in Northern California.", 
-    date: "May 2019", 
-    hashtags:"#HTML, #CSS, #JS, #Joomla", 
-    badge:"Internship" ,
-    importance: "1"
+type Props = {
+  events?: TimelineEvent[];
+};
+
+export default function TimelineComponent({ events = [] }: Props) {
+  const [selectedEvent, setSelectedEvent] = useState(0);
+
+  if (!Array.isArray(events) || events.length === 0) {
+    return (
+      <div className="text-center py-10 text-black">
+        No timeline events found.
+      </div>
+    );
   }
-];
-
-
-export default function TimelineComponent() {
-  const [selectedEvent, setSelectedEvent] = useState<number>(0);
 
   const handlePrev = () => {
-    setSelectedEvent((prev) => (prev > 0 ? prev - 1 : events.length - 1));
+    setSelectedEvent((prev) =>
+      prev > 0 ? prev - 1 : events.length - 1
+    );
   };
 
   const handleNext = () => {
-    setSelectedEvent((prev) => (prev < events.length - 1 ? prev + 1 : 0));
+    setSelectedEvent((prev) =>
+      prev < events.length - 1 ? prev + 1 : 0
+    );
   };
+
+  const active = events[selectedEvent];
 
   return (
     <div className="pb-8 max-w-7xl mx-auto px-6">
       <div className="text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold text-black mb-8 text-center pb-10">
+        <h1 className="text-4xl sm:text-5xl font-bold text-black mb-8 pb-10">
           My Journey So Far
         </h1>
       </div>
 
-      {/* Desktop/Web Layout (Timeline + Details) */}
-      <div className="hidden md:flex justify-center gap-12 sm:gap-2 md:gap-4">
-        {/* Left Side Timeline */}
+      {/* Desktop */}
+      <div className="hidden md:flex justify-center gap-8">
         <div>
           <Timeline position="right">
             {events.map((event, index) => (
-              <TimelineItem key={index}>
-                {/* Date on left */}
+              <TimelineItem key={event._id}>
                 <TimelineOppositeContent
-                  sx={{
-                    fontSize: "0.9rem",
-                    color: "black",
-                    transition: "all 0.2s ease-in-out",
-                    "&:hover": {
-                      transform:
-                        selectedEvent === index ? "scale(1.2)" : "scale(1.1)",
-                    },
-                  }}
+                  sx={{ fontSize: "0.9rem", color: "black" }}
                   align="right"
                 >
-                  {event.date}
+                  {new Date(event.date).toLocaleDateString()}
                 </TimelineOppositeContent>
 
-                {/* Dot in middle */}
                 <TimelineSeparator>
                   <TimelineDot
-                    variant={selectedEvent === index ? "filled" : "outlined"}
+                    variant={
+                      selectedEvent === index
+                        ? "filled"
+                        : "outlined"
+                    }
                     sx={{
                       borderColor: "black",
-                      borderWidth: "2px",
-                      bgcolor: selectedEvent === index ? "black" : "transparent",
-                      transform:
-                        selectedEvent === index ? "scale(1.3)" : "scale(1)",
-                      transition: "all 0.2s ease-in-out",
-                      padding: "7px",
+                      bgcolor:
+                        selectedEvent === index
+                          ? "black"
+                          : "transparent",
                       cursor: "pointer",
-                      "&:hover": {
-                        transform:
-                          selectedEvent === index
-                            ? "scale(1.35)"
-                            : "scale(1.2)",
-                        bgcolor: "gray",
-                      },
                     }}
                     onClick={() => setSelectedEvent(index)}
                   />
+
                   {index < events.length - 1 && (
                     <TimelineConnector sx={{ bgcolor: "black" }} />
                   )}
@@ -192,118 +88,110 @@ export default function TimelineComponent() {
           </Timeline>
         </div>
 
-        {/* Right Side Details Panel */}
+        {/* Details */}
         <div className="w-[70%] flex flex-col items-center">
           <AnimatePresence mode="wait">
-            {selectedEvent !== null && (
-              <motion.div
-                key={selectedEvent}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.2 }}
-                className="p-6 bg-white border rounded-lg shadow-lg w-full"
-              >
-                <div
-                  className="inline-block mt-3 px-3 py-1 text-xs font-semibold uppercase rounded-lg mb-[1%]"
-                  style={{
-                    backgroundColor:
-                      events[selectedEvent].badge === "Internship"
-                        ? "#edcd2b"
-                        : events[selectedEvent].badge === "Project"
-                        ? "#4cc219"
-                        : events[selectedEvent].badge === "Personal"
-                        ? "#e36f10"
-                        : "#f2f2f2",
-                  }}
-                >
-                  {events[selectedEvent].badge}
-                </div>
-                <h3 className="font-bold text-2xl mb-2">
-                  {events[selectedEvent].title}
-                </h3>
-                <p className="text-sm text-gray-600 mb-2">
-                  {events[selectedEvent].date}
-                </p>
-                <p className="mb-4">{events[selectedEvent].description}</p>
-                <p className="text-sm text-gray-600">
-                  {events[selectedEvent].hashtags}
-                </p>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          <div className="flex gap-4 mt-4">
-            <button
-              onClick={handlePrev}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-gray-100 transition"
-            >
-              <MdArrowBack size={20} />
-            </button>
-            <button
-              onClick={handleNext}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-gray-100 transition"
-            >
-              <MdArrowForward size={20} />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Layout (Full width card + arrows) */}
-      <div className="md:hidden flex flex-col items-center">
-        <AnimatePresence mode="wait">
-          {selectedEvent !== null && (
             <motion.div
               key={selectedEvent}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.2 }}
-              className="p-6 bg-white border rounded-lg shadow-lg w-[90%]" // 5% padding each side
+              className="p-6 bg-white border rounded-lg shadow-lg w-full"
             >
               <div
-                className="inline-block mt-3 px-3 py-1 text-xs font-semibold uppercase rounded-lg mb-[1%]"
+                className="inline-block px-3 py-1 text-xs font-semibold uppercase rounded-lg mb-2"
                 style={{
                   backgroundColor:
-                    events[selectedEvent].badge === "Internship"
+                    active.badge === "Internship"
                       ? "#edcd2b"
-                      : events[selectedEvent].badge === "Project"
-                      ? "#4cc219"
-                      : events[selectedEvent].badge === "Personal"
-                      ? "#e36f10"
-                      : "#f2f2f2",
+                      : active.badge === "Project"
+                        ? "#4cc219"
+                        : "#e36f10",
                 }}
               >
-                {events[selectedEvent].badge}
+                {active.badge}
               </div>
+
               <h3 className="font-bold text-2xl mb-2">
-                {events[selectedEvent].title}
+                {active.title}
               </h3>
+
               <p className="text-sm text-gray-600 mb-2">
-                {events[selectedEvent].date}
+                {new Date(active.date).toLocaleDateString()}
               </p>
-              <p className="mb-4">{events[selectedEvent].description}</p>
+
+              <p className="mb-4">{active.description}</p>
+
               <p className="text-sm text-gray-600">
-                {events[selectedEvent].hashtags}
+                {active.hashtags}
               </p>
             </motion.div>
-          )}
+          </AnimatePresence>
+
+          <div className="flex gap-4 mt-6 items-center mt-8">
+            <button
+              onClick={handlePrev}
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md hover:shadow-lg transition"
+            >
+              <MdArrowBack size={26} />
+            </button>
+
+            <button
+              onClick={handleNext}
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md hover:shadow-lg transition"
+            >
+              <MdArrowForward size={26} />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile */}
+      <div className="md:hidden flex flex-col items-center">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selectedEvent}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            className="p-6 bg-white border rounded-lg shadow-lg w-[90%]"
+          >
+            <div
+              className="inline-block px-3 py-1 text-xs font-semibold uppercase rounded-lg mb-2"
+              style={{
+                backgroundColor:
+                  active.badge === "Internship"
+                    ? "#edcd2b"
+                    : active.badge === "Project"
+                      ? "#4cc219"
+                      : "#e36f10",
+              }}
+            >
+              {active.badge}
+            </div>
+
+            <h3 className="font-bold text-2xl mb-2">
+              {active.title}
+            </h3>
+
+            <p className="text-sm text-gray-600 mb-2">
+              {new Date(active.date).toLocaleDateString()}
+            </p>
+
+            <p className="mb-4">{active.description}</p>
+
+            <p className="text-sm text-gray-600">
+              {active.hashtags}
+            </p>
+          </motion.div>
         </AnimatePresence>
 
-        {/* Navigation Buttons */}
         <div className="flex gap-4 mt-4">
-          <button
-            onClick={handlePrev}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-gray-100 transition"
-          >
-            <MdArrowBack size={20} />
+          <button onClick={handlePrev}>
+            <MdArrowBack />
           </button>
-          <button
-            onClick={handleNext}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-gray-100 transition"
-          >
-            <MdArrowForward size={20} />
+          <button onClick={handleNext}>
+            <MdArrowForward />
           </button>
         </div>
       </div>

@@ -1,12 +1,10 @@
-"use client";
-
 import Navbar from "./navbar";
 import Hero from "./hero";
 import Footer from "./footer";
 import Scroll from "./scroll";
-import AboutMe from "./aboutme";
-import Timeline from "./timeline";
 import Projects from "./projects";
+import AboutServer from "./aboutServer";
+import TimelineServer from "./timelineServer";
 
 export default function Home() {
   return (
@@ -17,10 +15,10 @@ export default function Home() {
         <Hero />
       </section>
       <section id="about-me">
-        <AboutMe />
+        <AboutServer />
       </section>
       <section id="timeline">
-        <Timeline />
+        <TimelineServer />
       </section>
       <section id="projects">
         <Projects />

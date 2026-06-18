@@ -1,13 +1,21 @@
+import { client } from "@/sanity/lib/client";
 import Link from "next/link";
 import { BsFillBookmarksFill } from "react-icons/bs";
 
-const Navbar = () => {
+export default async function Navbar() {
+  const resume = await client.fetch(`
+      *[_type == "resume"][0]{
+        "url": resume.asset->url,
+        label
+      }
+    `);
+
   return (
     <div className="pb-[1%] pt-[2%]">
       <div className="w-[90%] mx-auto bg-white rounded-lg shadow-lg">
         <div className="max-w-7xl mx-auto relative">
           <div className="flex items-center justify-between h-16 relative">
-            
+
             {/* Empty div to keep center alignment */}
             <div className="flex-1"></div>
 
@@ -41,14 +49,17 @@ const Navbar = () => {
 
             {/* Right side: Resume + Blog */}
             <div className="flex items-center gap-3">
-              <a
-                href="/JamesHarrisTechnical.pdf"
-                download
-                className="text-white bg-black hover:bg-neutral-800 py-2 px-4 text-md font-medium no-underline rounded"
-              >
-                Download Resume
-              </a>
-              
+              {resume?.url && (
+                <a
+                  href={resume.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white bg-black hover:bg-neutral-800 py-2 px-4 text-md font-medium rounded"
+                >
+                  {resume.label || "Download Resume"}
+                </a>
+              )}
+
               {/* Blog Icon */}
               <Link href="/blog" title="Blog">
                 <BsFillBookmarksFill size={23} className="text-black" />
@@ -61,5 +72,3 @@ const Navbar = () => {
     </div>
   );
 };
-
-export default Navbar;

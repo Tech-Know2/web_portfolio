@@ -16,7 +16,7 @@ export default function Hero() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <main>
+    <main className="pb-[8%]">
       <div className="flex items-center justify-center pt-[10%] px-4">
         <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start">
           
@@ -113,7 +113,7 @@ export default function Hero() {
                 <FaYoutube size={32} />
               </a>
               <a
-                href="https://asu.joinhandshake.com/profiles/56784401"
+                href="https://asu.joinhandshake.com/profiles/newura"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-black hover:text-gray-700 transition duration-300"

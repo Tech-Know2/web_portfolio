@@ -1,10 +1,30 @@
 import { type SchemaTypeDefinition } from 'sanity'
-
-import {blockContentType} from './blockContentType'
-import {categoryType} from './categoryType'
-import {postType} from './postType'
-import {authorType} from './authorType'
+import { blockContentType } from './blockContentType'
+import { categoryType } from './categoryType'
+import { postType } from './postType'
+import { authorType } from './authorType'
+import { projectType } from './projectType';
+import { languageSkillType } from './languageType';
+import { academicAchievementType } from './academicType';
+import { educationType } from './educationType';
+import { interestType } from './interestType';
+import { platformToolType } from './platformToolType';
+import { timelineEventType } from './timelineType';
+import { resumeType } from './resumeType';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContentType, categoryType, postType, authorType],
+  types: [
+    blockContentType,
+    categoryType,
+    postType,
+    authorType,
+    projectType,
+    languageSkillType,
+    academicAchievementType,
+    educationType,
+    interestType,
+    platformToolType,
+    timelineEventType,
+    resumeType
+  ],
 }
