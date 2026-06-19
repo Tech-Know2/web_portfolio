@@ -7,43 +7,16 @@ import ProjectDetailsComponent from "./projectDetails";
 import ProjectChallengesComponent from "./projectChallengesComponent";
 import ProjectGalleryComponent from "./projectGalleryComponent";
 import ProjectFilesComponent from "./projectFilesComponent";
+import { PROJECT_QUERY } from "@/lib/projectQuery";
+export { generateMetadata } from "@/lib/generateMetadata"
 
-const PROJECT_QUERY = `
-  *[_type == "project" && slug.current == $slug][0]{
-    _id,
-    title,
-    description,
-    link,
-    githubUrl,
-    technologies,
-    highlight,
-    startDate,
-    endDate,
-    slug,
-    body,
-    challenges,
-    files[]{
-      title,
-      file{
-        asset->{
-          url,
-          originalFilename
-        }
-      }
-    },
-    gallery,
-    coverImage,
-    featuredMedia
-  }
-`;
-
-interface PageProps {
+export interface ProjectPageProps {
   params: Promise<{
     projectSlug: string;
   }>;
 }
 
-export default async function ProjectPage({ params }: PageProps) {
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const { projectSlug } = await params;
 
   const project = await client.fetch<ProjectDetails>(
