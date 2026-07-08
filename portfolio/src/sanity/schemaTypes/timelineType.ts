@@ -46,18 +46,6 @@ export const timelineEventType = defineType({
             title: "Importance",
             type: "number",
             initialValue: 2,
-        }),
-        defineField({
-            name: "order",
-            title: "Display Order",
-            type: "number",
-            initialValue: 0,
-        }),
-        defineField({
-            name: "highlight",
-            title: "Highlight",
-            type: "boolean",
-            initialValue: true,
-        }),
+        })
     ],
 });

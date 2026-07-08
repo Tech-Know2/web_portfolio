@@ -3,7 +3,7 @@ import TimelineComponent from "./timeline";
 
 export default async function TimelineServer() {
     const events = await client.fetch(
-        `*[_type == "timelineEvent"]{
+        `*[_type == "timelineEvent"] | order(date desc){
             _id,
             title,
             description,
