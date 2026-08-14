@@ -1,9 +1,9 @@
 import { TagIcon } from '@sanity/icons'
 import { defineField, defineType } from 'sanity'
 
-export const referenceType = defineType({
-  name: 'reference',
-  title: 'Reference',
+export const referenceDocType = defineType({
+  name: 'referenceDoc',
+  title: 'Reference Doc',
   type: 'document',
   icon: TagIcon,
   fields: [
