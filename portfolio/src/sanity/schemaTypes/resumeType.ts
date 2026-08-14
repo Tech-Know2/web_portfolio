@@ -14,7 +14,6 @@ export const resumeType = defineType({
             },
             validation: (rule) => rule.required(),
         }),
-
         defineField({
             name: "label",
             title: "Button Label",

@@ -11,6 +11,7 @@ import { interestType } from './interestType';
 import { platformToolType } from './platformToolType';
 import { timelineEventType } from './timelineType';
 import { resumeType } from './resumeType';
+import { referenceType } from './referenceType';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -25,6 +26,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     interestType,
     platformToolType,
     timelineEventType,
-    resumeType
+    resumeType,
+    referenceType
   ],
 }
