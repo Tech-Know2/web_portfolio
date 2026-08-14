@@ -47,7 +47,6 @@ export const referenceDocType = defineType({
       options: {
         accept: ".pdf",
       },
-      validation: (rule) => rule.required(),
     }),
   ],
   preview: {
