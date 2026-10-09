@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { CgNpm } from "react-icons/cg";
 import { FaLinkedin, FaYoutube, FaHandshake, FaGithub, FaBlogger } from "react-icons/fa";
 
 export default function Footer() {
@@ -94,7 +95,7 @@ export default function Footer() {
                   { icon: <FaYoutube size={32} />, url: "https://www.youtube.com/@dumbmoney261" },
                   { icon: <FaHandshake size={32} />, url: "https://asu.joinhandshake.com/profiles/newura" },
                   { icon: <FaGithub size={32} />, url: "https://github.com/tech-know2" },
-                  { icon: <FaBlogger size={32} />, url: "https://coopersdevblog.blogspot.com" }
+                  { icon: <CgNpm size={32} />, url: "https://www.npmjs.com/~leto2" }
                 ].map((social, index) => (
                   <motion.a
                     key={index}

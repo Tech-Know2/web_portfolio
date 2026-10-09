@@ -12,6 +12,7 @@ import { platformToolType } from './platformToolType';
 import { timelineEventType } from './timelineType';
 import { resumeType } from './resumeType';
 import { referenceDocType } from './referenceType';
+import { packageType } from './packagesType';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -27,6 +28,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     platformToolType,
     timelineEventType,
     resumeType,
-    referenceDocType
+    referenceDocType,
+    packageType
   ],
 }

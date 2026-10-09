@@ -1,6 +1,7 @@
 import { client } from "@/sanity/lib/client";
 import Link from "next/link";
 import { BsFillBookmarksFill } from "react-icons/bs";
+import { CgNpm } from "react-icons/cg";
 
 export default async function Navbar() {
   const resume = await client.fetch(`
@@ -63,6 +64,10 @@ export default async function Navbar() {
               {/* Blog Icon */}
               <Link href="/blog" title="Blog">
                 <BsFillBookmarksFill size={23} className="text-black" />
+              </Link>
+
+               <Link href="/packages" title="Blog">
+                <CgNpm size={32} className="text-black" />
               </Link>
             </div>
 

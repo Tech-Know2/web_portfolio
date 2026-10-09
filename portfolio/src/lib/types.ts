@@ -109,3 +109,18 @@ export type PlatformTool = {
     order: number;
     highlight: boolean;
 };
+
+export type packageType = {
+    _id: string;
+    name: string;
+    slug?: {
+        current: string;
+    };
+    description: string;
+    category: string;
+    repositoryUrl?: string;
+    packageUrl?: string;
+    installCommand?: string;
+    highlight?: boolean;
+    order?: number;
+};

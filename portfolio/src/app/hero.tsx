@@ -3,7 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FaLinkedin, FaYoutube, FaHandshake, FaGithub, FaBlogger } from "react-icons/fa";
+import { FaLinkedin, FaYoutube, FaHandshake, FaGithub } from "react-icons/fa";
+import { CgNpm } from "react-icons/cg";
 
 const projectLinks = [
   { title: "@phestus", href: "#projects", delay: 0.7 },
@@ -128,12 +129,12 @@ export default function Hero() {
                 <FaGithub size={32} />
               </a>
               <a
-                href="https://coopersdevblog.blogspot.com"
+                href="https://www.npmjs.com/~leto2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-black hover:text-gray-700 transition duration-300"
               >
-                <FaBlogger size={32} />
+                <CgNpm size={32} />
               </a>
             </motion.div>
           </div>
