@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { CgNpm } from "react-icons/cg";
-import { FaLinkedin, FaYoutube, FaHandshake, FaGithub, FaBlogger } from "react-icons/fa";
+import { FaLinkedin, FaYoutube, FaHandshake, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   const currentLinks = [

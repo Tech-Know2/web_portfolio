@@ -35,7 +35,7 @@ const Packages = () => {
             Open Source Packages </h1>
 
         <p className="text-base sm:text-lg text-black text-center max-w-2xl mx-auto mb-12">
-            Explore the open-source packages, libraries, and tools I've built
+            Explore the open-source packages, libraries, and tools Ive built
             for developers.
         </p>
 
